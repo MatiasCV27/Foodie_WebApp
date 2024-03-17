@@ -1,2 +1,21 @@
-<p>user-dashboard works!</p>
-<router-outlet></router-outlet>
+<div class="container m-0 p-0">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="control-user">
+                <div class="user-img">
+                    <img src="../../../../assets/images/user-default.png">
+                </div>
+                <div class="user-buttoms">
+                    <a class="btn-user" routerLink="/user/informacion"><i class="bi bi-person-lines-fill"></i> Información del usuario</a>
+                    <a class="btn-user" routerLink="/user/historial"><i class="bi bi-card-list"></i> Historial de Pedidos</a>
+                    <a class="btn-user" routerLink="/user/preguntas"><i class="bi bi-info-circle"></i> FAQ</a>
+                    <a class="btn-user" routerLink="/user/ayuda"><i class="bi bi-question-circle"></i> Ayuda</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
