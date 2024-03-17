@@ -14,7 +14,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistroComponent } from './pages/registro/registro.component';
-import { HomeComponent } from './pages/usuario/home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 import { RestaurantesComponent } from './pages/usuario/restaurantes/restaurantes.component';
 import { MenuRestComponent } from './pages/usuario/menu-rest/menu-rest.component';
 import { UserPerfilComponent } from './pages/usuario/perfil/user-perfil/user-perfil.component';
