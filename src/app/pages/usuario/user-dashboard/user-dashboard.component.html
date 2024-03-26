@@ -1,33 +1,30 @@
-<div class="container m-0 p-0">
-    <div class="row">
-        <div class="col-lg-4">
-            <div class="control-user">
-                <div class="user-img">
-                    <img src="../../../../assets/images/user-default.png">
-                </div>
-                <div class="user-buttoms">
-                    <a class="btn-user" routerLink="/user/informacion">
-                        <div><i class="bi bi-person-lines-fill"></i> Información del usuario </div>
-                        <i class="bi bi-caret-right-fill"></i>
-                    </a>
-                    <a class="btn-user" routerLink="/user/historial">
-                        <div><i class="bi bi-card-list"></i> Historial de Pedidos </div>
-                        <i class="bi bi-caret-right-fill"></i>
-                    </a>
-                    <a class="btn-user" routerLink="/user/preguntas">
-                        <div><i class="bi bi-info-circle"></i> FAQ </div>
-                        <i class="bi bi-caret-right-fill"></i>
-                    </a>
-                    <a class="btn-user" routerLink="/user/ayuda">
-                        <div><i class="bi bi-question-circle"></i> Ayuda </div>
-                        <i class="bi bi-caret-right-fill"></i>
-                    </a>
-                </div>
+<div class="user-content">
+    <div class="user-dash-content">
+        <div class="control-user">
+            <div class="user-img">
+                <img src="../../../../assets/images/user-default.png">
+            </div>
+            <div class="user-buttoms">
+                <a class="btn-user" routerLink="/user/informacion">
+                    <div><i class="bi bi-person-lines-fill"></i> Información del usuario </div>
+                    <i class="bi bi-caret-right-fill"></i>
+                </a>
+                <a class="btn-user" routerLink="/user/historial">
+                    <div><i class="bi bi-card-list"></i> Historial de Pedidos </div>
+                    <i class="bi bi-caret-right-fill"></i>
+                </a>
+                <a class="btn-user" routerLink="/user/preguntas">
+                    <div><i class="bi bi-info-circle"></i> FAQ </div>
+                    <i class="bi bi-caret-right-fill"></i>
+                </a>
+                <a class="btn-user" routerLink="/user/ayuda">
+                    <div><i class="bi bi-question-circle"></i> Ayuda </div>
+                    <i class="bi bi-caret-right-fill"></i>
+                </a>
             </div>
         </div>
-        <div class="col-lg-8">
-            <router-outlet></router-outlet>
-        </div>
+    </div>
+    <div class="user-contenido">
+        <router-outlet></router-outlet>
     </div>
 </div>
-
