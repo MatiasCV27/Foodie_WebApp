@@ -1,4 +1,14 @@
-.footerCustom {
+footer {
     background-color: #B10303;
-    height: 64px;
+    font-family: "Blinker", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 22px;
+    color: white;
+}
+
+.social-icon {
+    color: white;
+    font-size: 28px;
+    margin: 0 10px;
 }
