@@ -1,0 +1,91 @@
+.historial {
+    max-height: 550px;
+    margin: 24px 24px 24px 0;
+    font-family: "Rowdies", sans-serif;
+}
+
+.titulo-historial {
+    width: 100%;
+    text-align: center;
+    font-size: 2.5em;
+    color: #B10303;
+    font-family: "Rowdies", sans-serif;
+    padding: 12px 0 12px 0;
+}
+
+.cont-historial {
+    height: 480px;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cont-historial::-webkit-scrollbar {
+    width: 0px;
+}
+
+.card-historial {
+    width: 380px;
+    height: 215px;
+    margin: 0 1em 1.5em 1em; 
+    background: #FFF1F1;
+    border: 1.5px solid #B10303;
+    border-radius: 12px;
+}
+
+.card-hist-titulo {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1.5px solid #B10303;
+    font-family: "Rowdies", sans-serif;
+    padding: .5em 0 .5em 0;
+}
+
+.card-hist-footer {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1.5px solid #B10303;
+    font-family: "Rowdies", sans-serif;
+    padding: .5em 7.5% .5em 7.5%;
+}
+
+.card-hist-cont-header {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Rowdies", sans-serif;
+    padding: .5em 7.5% .5em 7.5%;
+}
+
+.card-hist-cont-header p {
+    border-bottom: 2px dotted #B10303;
+}
+
+.card-hist-cont {
+    width: 100%;
+    height: 99.75px;
+    margin: 0;
+    display: flex;
+    overflow-y: auto;
+    justify-content: space-between;
+    overflow-y: auto;
+    padding: 0 7.5% 0 7%;
+    margin: .25em 0 1em 0;
+}
+
+.card-hist-cont::-webkit-scrollbar {
+    width: 3px;
+}
+
+.card-hist-cont::-webkit-scrollbar-thumb {
+    background-color: #B10303;
+    border-right: .75px solid #FFF1F1;
+}
+
+.costos {
+    text-align: right;
+}
