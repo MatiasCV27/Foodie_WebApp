@@ -42,8 +42,8 @@
     margin: 35px;
 }
 
-.login-input-email,
-.login-input-contraseña {
+.register-input-email,
+.register-input-contraseña {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -53,11 +53,11 @@
     font-family: "Blinker", sans-serif;
 }
 
-.login-input-email {
+.register-input-email {
     margin-bottom: 20px;
 }
 
-.login-input-contraseña {
+.register-input-contraseña {
     margin-bottom: 25px;
 }
 
