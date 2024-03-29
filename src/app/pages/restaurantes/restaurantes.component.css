@@ -1,0 +1,85 @@
+.categorias {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #B10303;
+    background-color: #FFF1F1 !important;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.rest-items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.categoria {
+    background-color: #FFF1F1;
+    border: 1px solid #B10303;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.card-custom .card-img-top {
+    height: 40%;
+    object-fit: cover;
+    border-radius: 18px 18px 0 0 !important;
+
+}
+
+.card-custom {
+    margin-bottom: 25px;
+    max-width: 294px;
+    max-height: 354px;
+    background-color: #FFF1F1 !important;
+    color: #500000 !important;
+    border-radius: 20px !important;
+    border: 1px solid #B10303 !important;
+}
+
+.card-custom .btn {
+    background-color: #007bff !important;
+    color: #500000 !important;
+}
+
+.card-custom .btn:hover {
+    background-color: #0056b3;
+}
+
+.card-custom .card-title {
+    font-size: 1.25em;
+    color: #500000 !important;
+}
+
+.card-text {
+    height: 98px;
+    overflow-y: auto;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+}
+
+.card-text::-webkit-scrollbar {
+    width: 2.5px;
+}
+
+.card-text::-webkit-scrollbar-thumb {
+    background-color: #B10303;
+}
+
+.btn-custom {
+    background-color: #500000 !important;
+    color: #FFF1F1 !important;
+    border-radius: 8px;
+    padding: 10px 20px;
+    text-decoration: none !important;
+    font-size: 16px;
+}
+
+.btn-custom:hover {
+    background-color: #820606 !important;
+    color: #ffffff !important;
+}

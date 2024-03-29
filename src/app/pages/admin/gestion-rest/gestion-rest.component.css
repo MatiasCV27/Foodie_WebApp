@@ -1,0 +1,98 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #B10303;
+    /* Líneas en los costados de la tabla */
+    color: #500000;
+}
+
+.table th, .table td {
+    border: 1px solid #B10303;
+    padding: 8px;
+    text-align: center; 
+    vertical-align: middle;
+  }
+
+.table th {
+    background-color: #FFF1F1;
+}
+
+.table th:first-child,
+.table td:first-child {
+    border-left: none;
+}
+
+.table th:last-child,
+.table td:last-child {
+    border-right: none;
+}
+
+.table td:nth-child(4) {
+    max-width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.table td img {
+    max-width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Estilos para cambiar el fondo de los iconos */
+.btn-edit {
+    background-color: #f2ff00;
+    /* Color de fondo para botones de editar y eliminar */
+    color: #000000;
+    /* Color de texto para botones de editar y eliminar */
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-delete {
+    background-color: #ff0000;
+    /* Color de fondo para botones de editar y eliminar */
+    color: #000000;
+    /* Color de texto para botones de editar y eliminar */
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-edit:hover,
+.btn-delete:hover {
+    background-color: #0056b3;
+    /* Cambio de color al pasar el mouse sobre los botones */
+}
+
+/* Estilos para el botón de agregar */
+.btn-agregar {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-agregar:hover {
+    background-color: #218838;
+}
+
+/* Estilos para el título "Gestión de Restaurantes" */
+.titulo {
+    color: #500000;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
