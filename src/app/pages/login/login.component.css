@@ -22,7 +22,11 @@
 
 .container {
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
+    position: absolute;
+    right: 13.02%;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .card-login {
@@ -81,5 +85,20 @@
     border: 2px solid #B10303;
     color: #B10303;
     font-family: "Rowdies", sans-serif;
+    padding-right: 50px;
+    padding-left: 30px;
+    position: relative;
+    background-image: url(../../../assets/images/google.png);
+    background-repeat: no-repeat;
+    background-position: right 65px center;
+    background-size: 20px 20px;
 }
 
+@media (max-width: 991px) {
+    .container {
+        position: static;
+        transform: none;
+        top: auto;
+        margin: 0 auto;
+    }
+}
