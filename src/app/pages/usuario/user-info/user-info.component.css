@@ -1,0 +1,166 @@
+.info-contentenido {
+    width: 100%;
+    margin: 0 24px 24px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.cuadrado {
+    width: 720px;
+    height: 550px;
+    margin: 24px 0;
+    background-color: #FFF1F1;
+    border: 2px solid #B10303;
+    border-radius: 12px;
+}
+
+.control-user {
+    width: 375px;
+    height: 550px;
+    margin: 24px 24px 24px 24px;
+    background-color: #FFF1F1;
+    border: 2px solid #B10303;
+    border-radius: 12px;
+}
+
+.user-img {
+    height: 225px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.user-img img {
+    margin: auto;
+    width: 160px;
+}
+
+.user-buttoms {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.btn-user {
+    width: 75%;
+    background-color: #ED1515;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #B10303;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-img2 {
+    position: relative;
+    height: 180px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.user-img2 img {
+    margin: auto;
+    width: 140px;
+    border-radius: 50%; /* Para que la imagen sea circular */
+}
+
+.camera-icon {
+    position: absolute;
+    top: 125px !important;
+    right: 370px !important;
+    margin-top: 5px;
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #B10303 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bi-camera-fill {
+    color: white;
+    font-size: 20px;
+}
+
+.info-title {
+    margin-bottom: 20px;
+    color: #B10303;
+    font-size: 1.5rem;
+    padding: 0 50px;
+}
+
+.info-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-left {
+    width: 50%; 
+    padding: 0 25px 0 50px; 
+    box-sizing: border-box; 
+}    
+
+.info-right {
+    width: 50%; 
+    padding: 0 50px 0 25px; 
+    box-sizing: border-box; 
+}    
+
+.info-left h4, .info-right h4 {
+    margin-bottom: 10px;
+    color: #333333;
+    font-size: 1rem;
+}
+
+.form-control {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 2px solid #500000 !important;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box; 
+}
+
+.botones-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn-editar,
+.btn-guardar {
+    margin: 35px 10px;
+    padding: 7.55px 25px;
+    border-radius: 15px;
+    color: #fff !important;
+    background-color: #500000 !important;
+    border: 1px solid #500000 !important;
+    cursor: pointer;
+}
+
+
+.camera-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bi-camera-fill {
+    color: white;
+    font-size: 20px;
+}
