@@ -1,5 +1,18 @@
-.control-user {
+.user-content {
+    max-width: 100%;
+    display: flex;
+}
+
+.user-dash-content {
+    width: fit-content;
+}
+
+.user-contenido {
     width: 100%;
+}
+
+.control-user {
+    width: 375px;
     height: 550px;
     margin: 24px 24px 24px 24px;
     background-color: #FFF1F1;
@@ -27,7 +40,7 @@
 }
 
 .btn-user {
-    width: 70%;
+    width: 75%;
     background-color: #ED1515;
     margin-bottom: 20px;
     padding: 15px;
