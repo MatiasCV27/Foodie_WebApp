@@ -1,0 +1,80 @@
+.ayuda-contenido {
+    width: 100%;
+    margin: 0 24px 24px 0;
+    display: flex;
+    justify-content: center;
+}
+.cuadrado {
+    width: 740px;
+    height: 550px;
+    margin: 24px 0;
+    background-color: #FFF1F1;
+    border: 2px solid #B10303;
+    border-radius: 12px;
+}
+
+.ayuda-title {
+    margin-bottom: 25px;
+    font-family: "Rowdies", sans-serif;
+    color: #B10303;
+    font-size: 30px;
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.ayuda-content {
+    justify-content: right;
+}
+
+.ayuda-center {
+    margin: 0 auto;
+    width: 70%; 
+    box-sizing: border-box;
+} 
+
+.ayuda-center h4 {
+    margin-bottom: 7px;
+    color: #333333;
+    font-size: 1rem;
+    margin-left: 10px;
+    display: inline-block; /* Para permitir que el ícono y el texto estén en línea */
+    vertical-align: middle;
+}
+
+#descrip{
+    height: 100px;
+    margin-bottom: 25px;
+}
+
+.form-control {
+    margin-bottom: 16px;
+    border: 1px solid #B10303 !important;
+    border-radius: 7px;
+    font-size: 1rem;
+    box-sizing: border-box; 
+}
+
+.botones-container {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-enviar { 
+    padding: 6px 50px;
+    border-radius: 8px;
+    color: #fff ;
+    background-color: #B10303;
+    border: 1px solid #500000;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: "Rowdies", sans-serif;
+}
+
+
+.material-symbols-outlined {
+    display: inline-block; /* Para permitir que el ícono y el texto estén en línea */
+    vertical-align: middle;
+    font-size: 1.5rem;
+    margin-bottom: 7px;
+}
