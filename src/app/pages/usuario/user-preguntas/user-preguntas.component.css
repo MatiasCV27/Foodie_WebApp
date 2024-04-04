@@ -1,0 +1,46 @@
+.preguntas-contenido {
+    width: 100%;
+    margin: 0 24px 24px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.cuadrado {
+    width: 740px;
+    height: 550px;
+    margin: 24px 0;
+    background-color: #FFF1F1;
+    border: 2px solid #B10303;
+    border-radius: 12px;
+}
+
+.preguntas-title {
+    margin-bottom: 25px;
+    font-family: "Rowdies", sans-serif;
+    color: #B10303;
+    font-size: 35px;
+    margin-top: 45px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*ACORDION*/
+
+.accordion {
+    padding-left: 55px;
+    padding-right: 55px;
+    padding-top: 28px;
+}
+
+.accordion-button {
+    background-color: #f1b0b0;
+    padding: 0.4rem 1rem; 
+    font-size: 0.9rem;
+}
+
+.accordion-body {
+    padding: 0.3rem 1rem; 
+    font-size: 0.8rem; 
+}
+
+
