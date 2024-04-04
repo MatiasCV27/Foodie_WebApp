@@ -1,0 +1,72 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #B10303;
+    /* Líneas en los costados de la tabla */
+    color: #500000;
+}
+
+.titulo{
+    font-family: "Rowdies", sans-serif;
+    font-size: 40px;
+    color: rgba(177, 3, 3, 1);
+}
+
+.table th, .table td {
+    border: 1px solid #B10303;
+    padding: 8px;
+    text-align: center; 
+    vertical-align: middle;
+    color: rgba(85, 0, 0, 1);
+}
+
+.table th {
+    background-color: rgba(255, 241, 241, 1);
+}
+
+.table td img {
+    max-width: 50px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.btn-edit {
+    background-color: rgba(242, 215, 29, 1);
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-delete {
+    background-color: rgba(251, 56, 65, 1);
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-edit:hover{
+    background-color: rgb(210, 188, 51);
+}
+
+.btn-delete:hover {
+    background-color: rgb(207, 65, 72);
+}
+
+.btn-agregar {
+    background-color: rgba(41, 108, 65, 1);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-family: "Rowdies", sans-serif;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
