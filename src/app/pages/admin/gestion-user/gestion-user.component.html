@@ -1,9 +1,9 @@
 <main class="p-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="titulo">Gestión de Usuarios</h2>
-        <button class="btn btn-agregar">Registrar</button>
+        <button class="btn btn-success"><i class="bi bi-plus-circle"></i> Registrar</button>
     </div>
-    <table class="table">
+    <table id="TablaUsuario" class="table">
         <thead>
             <tr>
                 <th scope="col">Nombre</th>
@@ -13,9 +13,7 @@
                 <th scope="col">Nacimiento</th>
                 <th scope="col">Rol</th>
                 <th scope="col">Foto Perfil</th>
-                <th scope="col">Editar</th>
-                <th scope="col">Eliminar</th>
-
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -26,54 +24,16 @@
                 <td>Lima</td>
                 <td>21/04/2000</td>
                 <td>ADMIN</td>
-                <td><img src="../../../../assets/images/imgPrueba/user.png" alt="Imagen 1"></td>
-                <td><button class="btn-edit"><i class="bi bi-pencil-square"></i></button></td>
-                <td><button class="btn-delete"><i class="bi bi-trash3-fill"></i></button></td>
-            </tr>
-            <tr>
-                <td>Maria Lopez Garcia</td>
-                <td>Femenino</td>
-                <td>963784562</td>
-                <td>Chorrillos</td>
-                <td>14/07/1997</td>
-                <td>USER</td>
-                <td><img src="../../../../assets/images/imgPrueba/user.png" alt="Imagen 2"></td>
-                <td><button class="btn-edit"><i class="bi bi-pencil-square"></i></button></td>
-                <td><button class="btn-delete"><i class="bi bi-trash3-fill"></i></button></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><img src="" alt=""></td>
-                <td><button class="btn-edit"><i class="bi bi-pencil-square"></i></button></td>
-                <td><button class="btn-delete"><i class="bi bi-trash3-fill"></i></button></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><img src="" alt=""></td>
-                <td><button class="btn-edit"><i class="bi bi-pencil-square"></i></button></td>
-                <td><button class="btn-delete"><i class="bi bi-trash3-fill"></i></button></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><img src="" alt=""></td>
-                <td><button class="btn-edit"><i class="bi bi-pencil-square"></i></button></td>
-                <td><button class="btn-delete"><i class="bi bi-trash3-fill"></i></button></td>
+                <td><img src="../../../../assets/images/imgPrueba/user.png" width="45"></td>
+                <td>
+                    <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
+                    <button class="btn btn-danger btnDelete"><i class="bi bi-trash3-fill"></i></button>
+                </td>
             </tr>
         </tbody>
     </table>
 </main>
+
+<script>
+    let table = new DataTable('#TablaUsuario');
+</script>
