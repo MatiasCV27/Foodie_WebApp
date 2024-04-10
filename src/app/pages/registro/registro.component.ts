@@ -20,7 +20,7 @@ export class RegistroComponent {
   }
 
   onSubmit() {
-    this.userservices.register(this.formReg.value)
+    this.userservices.registro(this.formReg.value)
     .then(response => {
       console.log(response);
       this.router.navigate(['/login']);

@@ -46,4 +46,28 @@ export class LoginComponent {
       });
   }
 
+  onGoogle() {
+    this.userservices.google()
+    .then(() => {
+      this.router.navigate(['']);
+      Swal.fire({
+        icon: 'success',
+        title: 'Inicio de Sesión con Google Exitasamente',
+        text: '¡Bienvenido!',
+        timer: 2000 ,
+        background: '#212529',
+        color: 'white'
+      });
+    })
+    /*.catch(() => {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en inicio de sesión con google',
+        text: 'No se que poner xd',
+        background: '#212529',
+        color: 'white'
+      });
+    });*/
+  }
+
 }

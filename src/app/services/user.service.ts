@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from '@angular/fire/auth'
+import { Auth, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, signInWithPopup } from '@angular/fire/auth'
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +8,7 @@ export class UserService {
 
   constructor(private auth:Auth) { }
 
-  register({email, password}:any) {
+  registro({email, password}:any) {
     return createUserWithEmailAndPassword(this.auth, email, password);
   }
 
@@ -16,6 +16,11 @@ export class UserService {
     return signInWithEmailAndPassword(this.auth, email, password);
   }
 
+  google(): any {
+    const proveedor = new GoogleAuthProvider();
+    return signInWithPopup(this.auth, proveedor);
+  }
+ 
   logout() {
     return signOut(this.auth);
   }
