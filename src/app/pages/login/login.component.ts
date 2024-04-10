@@ -21,29 +21,53 @@ export class LoginComponent {
   }
 
   onSubmit() {
-    this.userservices.login(this.formLogin.value)
-      .then(response => {
-        console.log(response);
-        this.router.navigate(['']);
-        Swal.fire({
-          icon: 'success',
-          title: 'Inicio de Sesión Exitoso',
-          text: '¡Bienvenido de vuelta!',
-          timer: 2000 ,
-          background: '#212529',
-          color: 'white'
-        });
-      })
-      .catch(error => {
-        console.log(error);
-        Swal.fire({
-          icon: 'error',
-          title: 'Error en inicio de sesión',
-          text: 'Correo electrónico o contraseña incorrectos. Por favor, verifica tus credenciales.',
-          background: '#212529',
-          color: 'white'
-        });
+    const passwordControl = this.formLogin.get('password');
+
+    if (!passwordControl) {
+      
+      console.error("El control de contraseña no se encontró en el formulario.");
+      return;
+    }
+
+    const password = passwordControl.value;
+
+    if (password.length < 6) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en inicio de sesión',
+        text: 'La contraseña debe tener un mínimo de 6 caracteres.',
+        background: 'rgba(255, 241, 241, 1)',
+        color: 'rgba(80, 0, 0, 1)',
+        confirmButtonColor: 'rgba(177, 3, 3, 1)',
       });
+      return; // Detener el proceso de inicio de sesión si la contraseña es inválida
+    }
+
+  this.userservices.login(this.formLogin.value)
+    .then(response => {
+      console.log(response);
+      this.router.navigate(['']);
+      Swal.fire({
+        icon: 'success',
+        title: 'Inicio de Sesión Exitoso',
+        text: '¡Bienvenido de vuelta!',
+        timer: 2000,
+        background: 'rgba(255, 241, 241, 1)',
+        color: 'rgba(80, 0, 0, 1)',
+        confirmButtonColor: 'rgba(177, 3, 3, 1)',
+      });
+    })
+    .catch(error => {
+      console.log(error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en inicio de sesión',
+        text: 'Correo electrónico o contraseña incorrectos. Por favor, verifica tus credenciales.',
+        background: 'rgba(255, 241, 241, 1)',
+        color: 'rgba(80, 0, 0, 1)',
+        confirmButtonColor: 'rgba(177, 3, 3, 1)',
+      });
+    });
   }
 
   onGoogle() {
@@ -55,8 +79,9 @@ export class LoginComponent {
         title: 'Inicio de Sesión con Google Exitasamente',
         text: '¡Bienvenido!',
         timer: 2000 ,
-        background: '#212529',
-        color: 'white'
+        background: 'rgba(255, 241, 241, 1)',
+          color: 'rgba(80, 0, 0, 1)',
+          confirmButtonColor: 'rgba(177, 3, 3, 1)',
       });
     })
     /*.catch(() => {
@@ -69,5 +94,4 @@ export class LoginComponent {
       });
     });*/
   }
-
 }
