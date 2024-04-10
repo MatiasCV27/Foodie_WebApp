@@ -10,6 +10,7 @@
     padding: 8px;
     text-align: center; 
     vertical-align: middle;
+    color: rgba(85, 0, 0, 1);
   }
 
 .table th {
@@ -38,9 +39,8 @@
 }
 
 /* Estilos para el título "Gestión de Restaurantes" */
-.titulo {
-    color: #500000;
+.titulo{
+    font-family: "Rowdies", sans-serif;
     font-size: 40px;
-    font-weight: bold;
-    margin-bottom: 5px;
+    color: rgba(177, 3, 3, 1);
 }
