@@ -1,10 +1,12 @@
 <div class="register">
     <div class="container">
         <div class="card-register">
-            <img src="../../../assets/images/logo_foodie_rojo.png" class="register-image">
-            <input type="email" placeholder="Email:" class="register-input-email">
-            <input type="password" placeholder="Contraseña:" class="register-input-contraseña">
-            <button class="register-button">REGISTRARSE</button>
+            <form [formGroup]="formReg" (ngSubmit)="onSubmit()">
+                <img src="../../../assets/images/logo_foodie_rojo.png" class="register-image">
+                <input type="email" placeholder="Email:" class="register-input-email" required formControlName="email" name="email">
+                <input type="password" placeholder="Contraseña:" class="register-input-contraseña" required formControlName="password" name="password">>
+                <button type="submit" class="register-button">REGISTRARSE</button>
+            </form>
         </div>
     </div>
 </div>
