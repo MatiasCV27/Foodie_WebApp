@@ -6,15 +6,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 
 // Firebase
-//import { AngularFireModule } from '@angular/fire/compat';
-//import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-//import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
 
 // Angular Material
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+
+// Extras
+import { NgxPaginationModule } from 'ngx-pagination';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -34,17 +38,6 @@ import { GestionRestComponent } from './pages/admin/gestion-rest/gestion-rest.co
 import { GestionMenuComponent } from './pages/admin/gestion-menu/gestion-menu.component';
 import { GestionUserComponent } from './pages/admin/gestion-user/gestion-user.component';
 import { GestionRestAsociadosComponent } from './pages/admin/gestion-rest-asociados/gestion-rest-asociados.component';
-
-const firebase = {
-  apiKey: "AIzaSyBi4HgSUzrwrjUvd7pbmzpqaZY_1SZzJ18",
-  authDomain: "android-foodie-bf103.firebaseapp.com",
-  databaseURL: "https://android-foodie-bf103-default-rtdb.firebaseio.com",
-  projectId: "android-foodie-bf103",
-  storageBucket: "android-foodie-bf103.appspot.com",
-  messagingSenderId: "1018100386893",
-  appId: "1:1018100386893:web:3e6a56cb3812abf9a7e004",
-  measurementId: "G-MVB24X5ZB6"
-};
 
 @NgModule({
   declarations: [
@@ -72,11 +65,15 @@ const firebase = {
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
+    NgxPaginationModule,
     FormsModule,
     ReactiveFormsModule,
     ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: 'never' }),
-    provideFirebaseApp(() => initializeApp(firebase)),
-    provideAuth(() => getAuth()) 
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    AngularFireModule.initializeApp(environment.firebase), 
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

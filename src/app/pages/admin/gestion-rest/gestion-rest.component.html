@@ -1,33 +1,72 @@
 <main class="p-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="titulo">Gestión de Restaurantes</h2>
-        <button class="btn btn-success"><i class="bi bi-plus-circle"></i> Registrar</button>
+        <button class="btn btn-success" (click)="openSave(content)"><i class="bi bi-plus-circle"></i> Registrar</button>
     </div>
     <table id="TablaRestaurantes" class="table">
         <thead>
             <tr>
                 <th scope="col">Nombre</th>
                 <th scope="col">Descripción</th>
-                <th scope="col">Categorías</th>
+                <th scope="col">Categoría</th>
                 <th scope="col">Imagen</th>
                 <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>KFC</td>
-                <td>Descripción del producto 1</td>
-                <td>Pollerías</td>
-                <td><img src="../../../../assets/images/imgPrueba/KFC-Logo.png" width="75"></td>
+            <tr *ngFor="let item of collection.data | paginate: config">
+                <td>{{ item.nombre }}</td>
+                <td>{{ item.descripcion }}</td>
+                <td>{{ item.categoria }}</td>
+                <td><img [src]="item.imagen" height="50"></td>
                 <td>
-                    <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
-                    <button class="btn btn-danger btnDelete"><i class="bi bi-trash3-fill"></i></button>
+                    <button class="btn btn-warning" (click)="openEdit(content, item)"><i class="bi bi-pencil-square"></i></button>
+                    <button class="btn btn-danger btnDelete" (click)="eliminarRest(item)"><i class="bi bi-trash3-fill"></i></button>
                 </td>
             </tr>
         </tbody>
     </table>
-</main>
 
-<script>
-    let table = new DataTable('#TablaRestaurantes');
-</script>
+    <div class="paginationContent">
+        <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+    </div>
+
+    <!-- Registrar Modal -->
+    <ng-template #content let-modal>
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Registrar/Actualizar Restaurantes</h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="mb-3">
+
+                    <form [formGroup]="restauranteForm">
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input type="text" formControlName="nombre" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Descripción</label>
+                            <input type="text" formControlName="descripcion" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Categoria</label>
+                            <input type="text" formControlName="categoria" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Imagen</label>
+                            <input type="text" formControlName="imagen" class="form-control">
+                        </div>
+                    </form>
+
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="guardarRest()" *ngIf="!btnActualizar">Registrar</button>
+            <button type="button" class="btn btn-outline-dark" (click)="actualizarRest()" *ngIf="btnActualizar">Actualizar</button>
+        </div>
+    </ng-template>
+
+</main>
