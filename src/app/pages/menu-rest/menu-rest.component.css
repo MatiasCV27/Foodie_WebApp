@@ -1,0 +1,112 @@
+.titulo {
+    color: #b10303;
+    text-align: center;
+    margin-top: 30px;
+    font-family: "Rowdies";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 56px;
+    align-items: center;
+  }
+  
+  /** Tarjetas Restaurante **/
+  
+  .wrap {
+    max-width: 1800px;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  
+  .column-2.carta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+    row-gap: 1rem;
+  }
+  
+  .plato-carta {
+    display: flex;
+    align-items: center;
+    border: 1px solid #b10303;
+    border-radius: 10px;
+  }
+  
+  .img-plato-carta {
+    display: grid;
+    flex-basis: 40%;
+    justify-content: center;
+    background-image: url(../../../../assets/images/galeria/p1.jpg);
+    height: 136px;
+    border-radius: 10px 0 0 10px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  
+  .title-plato-carta {
+    border: 1px solid #b10303;
+    border-bottom: none;
+    border-top: none;
+    border-right: none;
+    flex-basis: 100%;
+    padding: 0 1rem;
+    background-color: #fff1f1;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  .title-plato-carta h4 {
+    text-align: center;
+    margin-top: 15px;
+    color: #b10303;
+    font-family: "Inder";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 19px;
+  }
+  
+  .title-plato-carta p {
+    color: #550000;
+    font-family: "Blinker";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+  }
+  
+  .cta-wrap_tarjeta-rest {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .precio_tarjeta-rest span {
+    font-size: 13px;
+    color: #550000;
+    font-family: "Inder";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+  }
+  
+  .cta_tarjeta-rest {
+    background-color: #fff;
+    padding: 0.25rem 1rem;
+    border-radius: 10px;
+    border: 0.5px solid #b10303;
+  }
+  
+  .cta_tarjeta-rest a {
+    color: #b10303;
+    text-decoration: none;
+    font-family: "Rowdies";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 12px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
