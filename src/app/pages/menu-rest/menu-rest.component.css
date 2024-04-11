@@ -36,7 +36,7 @@
     display: grid;
     flex-basis: 40%;
     justify-content: center;
-    background-image: url(../../../../assets/images/galeria/p1.jpg);
+    background-image: url(../../../../src/assets/images/galeria/p1.jpg);
     height: 136px;
     border-radius: 10px 0 0 10px;
     background-size: cover;
