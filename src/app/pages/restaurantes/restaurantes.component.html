@@ -10,136 +10,11 @@
     </section>
     <section class="restaurantes p-4">
         <div class="rest-items">
-            <div class="card card-custom h-70">
-                <img src="../../../assets/images/imgPrueba/KFC-Logo.png" class="card-img-top img-custom" alt="Imagen 2">
+            <div class="card card-custom h-70" *ngFor="let item of collection.data">
+                <img [src]="item.imagen" class="card-img-top img-custom">
                 <div class="card-body">
-                    <h5 class="card-title text-center mb-2"><strong>KFC</strong></h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam varius
-                        lectus sit amet enim ultrices, in dignissim lacus bibendum, in dignissim lacus bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam varius
-                        lectus sit amet enim ultrices, in dignissim lacus bibendum, in dignissim lacus bibendum.</p>
-                    <div class="text-center p-2">
-                        <a href="#" class="btn-custom">Visitar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card card-custom h-70">
-                <img src="../../../assets/images/imgPrueba/Johns.jpg" class="card-img-top img-custom" alt="Imagen 2">
-                <div class="card-body">
-                    <h5 class="card-title text-center mb-2"><strong>Papa Johns</strong></h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam varius
-                        lectus sit amet enim ultrices, in dignissim lacus bibendum, in dignissim lacus bibendum.</p>
-                    <div class="text-center p-2">
-                        <a href="#" class="btn-custom">Visitar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card card-custom h-80">
-                <img src="../../../assets/images/imgPrueba/Bembos.png" class="card-img-top img-custom" alt="Imagen 3">
-                <div class="card-body">
-                    <h5 class="card-title text-center mb-2"><strong>Bembos</strong></h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam varius
-                        lectus sit amet enim ultrices, in dignissim lacus bibendum, in dignissim lacus bibendum.</p>
-                    <div class="text-center p-2">
-                        <a href="#" class="btn-custom">Visitar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card card-custom h-70">
-                <img src="../../../assets/images/imgPrueba/Pardos.jpg" class="card-img-top img-custom" alt="Imagen 4">
-                <div class="card-body">
-                    <h5 class="card-title text-center mb-2"><strong>Pardos Chicken</strong></h5>
-                    <p class="card-text ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam varius
-                        lectus sit amet enim ultrices, in dignissim lacus bibendum, in dignissim lacus bibendum.</p>
-                    <div class="text-center p-2">
-                        <a href="#" class="btn-custom">Visitar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card card-custom h-70">
-                <img src="../../../assets/images/imgPrueba/KFC-Logo.png" class="card-img-top img-custom" alt="Imagen 2">
-                <div class="card-body">
-                    <h5 class="card-title text-center mb-2"><strong>KFC</strong></h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam varius
-                        lectus sit amet enim ultrices, in dignissim lacus bibendum, in dignissim lacus bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam varius
-                        lectus sit amet enim ultrices, in dignissim lacus bibendum, in dignissim lacus bibendum.</p>
-                    <div class="text-center p-2">
-                        <a href="#" class="btn-custom">Visitar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card card-custom h-70">
-                <img src="../../../assets/images/imgPrueba/Johns.jpg" class="card-img-top img-custom" alt="Imagen 2">
-                <div class="card-body">
-                    <h5 class="card-title text-center mb-2"><strong>Papa Johns</strong></h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam varius
-                        lectus sit amet enim ultrices, in dignissim lacus bibendum, in dignissim lacus bibendum.</p>
-                    <div class="text-center p-2">
-                        <a href="#" class="btn-custom">Visitar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card card-custom h-80">
-                <img src="../../../assets/images/imgPrueba/Bembos.png" class="card-img-top img-custom" alt="Imagen 3">
-                <div class="card-body">
-                    <h5 class="card-title text-center mb-2"><strong>Bembos</strong></h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam varius
-                        lectus sit amet enim ultrices, in dignissim lacus bibendum, in dignissim lacus bibendum.</p>
-                    <div class="text-center p-2">
-                        <a href="#" class="btn-custom">Visitar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card card-custom h-70">
-                <img src="../../../assets/images/imgPrueba/Pardos.jpg" class="card-img-top img-custom" alt="Imagen 4">
-                <div class="card-body">
-                    <h5 class="card-title text-center mb-2"><strong>Pardos Chicken</strong></h5>
-                    <p class="card-text ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam varius
-                        lectus sit amet enim ultrices, in dignissim lacus bibendum, in dignissim lacus bibendum.</p>
-                    <div class="text-center p-2">
-                        <a href="#" class="btn-custom">Visitar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card card-custom h-70">
-                <img src="../../../assets/images/imgPrueba/KFC-Logo.png" class="card-img-top img-custom" alt="Imagen 2">
-                <div class="card-body">
-                    <h5 class="card-title text-center mb-2"><strong>KFC</strong></h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam varius
-                        lectus sit amet enim ultrices, in dignissim lacus bibendum, in dignissim lacus bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam varius
-                        lectus sit amet enim ultrices, in dignissim lacus bibendum, in dignissim lacus bibendum.</p>
-                    <div class="text-center p-2">
-                        <a href="#" class="btn-custom">Visitar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card card-custom h-70">
-                <img src="../../../assets/images/imgPrueba/Johns.jpg" class="card-img-top img-custom" alt="Imagen 2">
-                <div class="card-body">
-                    <h5 class="card-title text-center mb-2"><strong>Papa Johns</strong></h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam varius
-                        lectus sit amet enim ultrices, in dignissim lacus bibendum, in dignissim lacus bibendum.</p>
-                    <div class="text-center p-2">
-                        <a href="#" class="btn-custom">Visitar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card card-custom h-80">
-                <img src="../../../assets/images/imgPrueba/Bembos.png" class="card-img-top img-custom" alt="Imagen 3">
-                <div class="card-body">
-                    <h5 class="card-title text-center mb-2"><strong>Bembos</strong></h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam varius
-                        lectus sit amet enim ultrices, in dignissim lacus bibendum, in dignissim lacus bibendum.</p>
-                    <div class="text-center p-2">
-                        <a href="#" class="btn-custom">Visitar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card card-custom h-70">
-                <img src="../../../assets/images/imgPrueba/Pardos.jpg" class="card-img-top img-custom" alt="Imagen 4">
-                <div class="card-body">
-                    <h5 class="card-title text-center mb-2"><strong>Pardos Chicken</strong></h5>
-                    <p class="card-text ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam varius
-                        lectus sit amet enim ultrices, in dignissim lacus bibendum, in dignissim lacus bibendum.</p>
+                    <h5 class="card-title text-center mb-2"><strong>{{ item.nombre }}</strong></h5>
+                    <p class="card-text">{{ item.descripcion }}</p>
                     <div class="text-center p-2">
                         <a href="#" class="btn-custom">Visitar</a>
                     </div>
@@ -148,4 +23,3 @@
         </div>
     </section>
 </main>
->>>>>>> f1d4ef51ccb5bc4c52c1c82b680395cd8deb8ef6
