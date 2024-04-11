@@ -136,5 +136,4 @@ export class GestionRestComponent implements OnInit {
 				return `with: ${reason}`;
 		}
 	}
-
 }
