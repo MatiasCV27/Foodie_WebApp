@@ -1,9 +1,9 @@
 <main class="p-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="titulo">Gestión del Menú de Restaurantes</h2>
-        <button class="btn btn-success"><i class="bi bi-plus-circle"></i> Registrar</button>
+        <button class="btn btn-success" (click)="openSave(content)"><i class="bi bi-plus-circle"></i> Registrar</button>
     </div>
-    <table class="table">
+    <table id="TablaMenus" class="table">
         <thead>
             <tr>
                 <th scope="col">Nombre</th>
@@ -16,18 +16,69 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Pollos a la Brasa</td>
-                <td>Text</td>
-                <td>Text</td>
-                <td>Text</td>
-                <td>Text</td>
-                <td><img src="../../../../assets/images/galeria/p1.jpg" height="50"></td>
+            <tr *ngFor="let item of collection.data | paginate: config">
+                <td>{{ item.nombre }}</td>
+                <td>{{ item.descripcion }}</td>
+                <td>{{ item.cantidad }}</td>
+                <td>{{ item.categoria }}</td>
+                <td>{{ item.precio }}</td>
+                <td><img [src]="item.imagen" height="50"></td>
                 <td>
-                    <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
-                    <button class="btn btn-danger btnDelete"><i class="bi bi-trash3-fill"></i></button>
+                    <button class="btn btn-warning" (click)="openEdit(content, item)"><i class="bi bi-pencil-square"></i></button>
+                    <button class="btn btn-danger btnDelete" (click)="eliminarMen(item)"><i class="bi bi-trash3-fill"></i></button>
                 </td>
             </tr>
         </tbody>
     </table>
+
+    <div class="paginationContent">
+        <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+    </div>
+
+    <!-- Registrar Modal -->
+    <ng-template #content let-modal>
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Registrar/Actualizar Menus</h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="mb-3">
+
+                    <form [formGroup]="menuForm">
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input type="text" formControlName="nombre" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Descripción</label>
+                            <input type="text" formControlName="descripcion" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Cantidad</label>
+                            <input type="text" formControlName="cantidad" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Categoria</label>
+                            <input type="text" formControlName="categoria" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Precio</label>
+                            <input type="text" formControlName="precio" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Imagen</label>
+                            <input type="text" formControlName="imagen" class="form-control">
+                        </div>
+                    </form>
+
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="guardarMen()" *ngIf="!btnActualizar">Registrar</button>
+            <button type="button" class="btn btn-outline-dark" (click)="actualizarMen()" *ngIf="btnActualizar">Actualizar</button>
+        </div>
+    </ng-template>
+
 </main>

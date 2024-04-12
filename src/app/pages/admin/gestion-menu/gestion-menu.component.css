@@ -11,6 +11,7 @@
     padding: 8px;
     text-align: center; 
     vertical-align: middle;
+    max-width: 200px;
   }
 
 .table th {
@@ -66,6 +67,10 @@
     transition: background-color 0.3s ease;
 }
 
+.btnDelete {
+    margin-left: 10%;
+}
+
 .btn-edit:hover,
 .btn-delete:hover {
     background-color: #0056b3;
@@ -95,4 +100,9 @@
     font-size: 40px;
     font-weight: bold;
     margin-bottom: 5px;
+}
+
+.paginationContent {
+    text-align: center;
+    color: rgba(177, 3, 3, 1);
 }
