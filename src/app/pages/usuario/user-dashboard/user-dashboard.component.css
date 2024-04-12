@@ -50,4 +50,8 @@
     text-decoration: none;
     display: flex;
     justify-content: space-between;
+    font-family: "Rowdies", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
 }
