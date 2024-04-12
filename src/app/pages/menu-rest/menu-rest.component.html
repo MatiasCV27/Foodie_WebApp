@@ -1,38 +1,55 @@
-<section class="contaner-fluid p-4">
-  <h2 class="titulo">Kentucky Fried Chicken</h2>
+<h2 class="titulo">Kentucky Fried Chicken</h2>
+<section class="contaner-fluid p-4 c-menu">
   <div class="cont-menus">
     <div class="plato-carta">
-      <img src="../../../assets/images/galeria/p2.jpg" class="img-plato-carta img-item"/>
+      <img src="../../../assets/images/galeria/p2.jpg" class="img-plato-carta img-item" />
       <div class="title-plato-carta">
-        <span class="title-plato-titulo titulo-item">Lorem.</span>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida
-          lorem ut nulla consequat, in varius libero ultrices. Nullam sodales
-          turpis. nulla consequat in varius libero ultrices. Nullam sodales
-          turpis. nulla consequat
-        </p>
+        <div class="title-plato-titulo">
+          <span class="titulo-item">Mazamorra Morada</span>
+        </div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda officiis natus placeat provident quaerat! Incidunt delectus placeat dolorum nisi rerum nobis animi, commodi nemo sit explicabo atque aut, ipsam doloribus!</p>
         <div class="cta-wrap_tarjeta-rest">
-          <span class="precio_tarjeta-rest">S/60.00</span>
+          <span class="precio_tarjeta-rest precio-item">S/. 60</span>
           <div class="cta_tarjeta-rest">
-            <button class="boton-item">Agregar</button>
+            <button class="boton-item" click="hacerVisibleCarrito()">Agregar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="plato-carta">
+      <img src="../../../assets/images/galeria/p6.png" class="img-plato-carta img-item" />
+      <div class="title-plato-carta">
+        <div class="title-plato-titulo">
+          <span class="titulo-item">Chicharrón de Pota</span>
+        </div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda officiis natus placeat provident quaerat! Incidunt delectus placeat dolorum nisi rerum nobis animi, commodi nemo sit explicabo atque aut, ipsam doloribus!</p>
+        <div class="cta-wrap_tarjeta-rest">
+          <span class="precio_tarjeta-rest precio-item">S/. 60</span>
+          <div class="cta_tarjeta-rest">
+            <button class="boton-item" click="hacerVisibleCarrito()">Agregar</button>
           </div>
         </div>
       </div>
     </div>
   </div>
   <div class="carrito" id="carrito">
-        <div class="header-carrito">
-            <h4>Resumen de las Compras</h4>
-        </div>
-        <div class="carrito-items">
-        </div>
-        <div class="carrito-total">
-            <div class="fila">
-                <strong>Tu Total</strong>
-                <span class="carrito-precio-total">
-                    $120.000,00
-                </span>
-            </div>
-        </div>
+    <div class="header-carrito">
+      <h4 class="m-0"><strong>Resumen de las Compras</strong></h4>
     </div>
+    <div class="carrito-items">
+    </div>
+    <div class="carrito-total">
+      <div class="fila m-0">
+        <div class="info-pagar">
+          <strong>Tu Total</strong>
+          <span class="carrito-precio-total">
+            $120.000,00
+          </span>
+        </div>
+        <div>
+          <button class="btn-pagar">Comprar <i class="fa-solid fa-bag-shopping"></i> </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
