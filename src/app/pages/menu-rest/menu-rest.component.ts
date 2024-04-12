@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CarritoService } from 'src/app/services/carrito.service';
 
 @Component({
   selector: 'app-menu-rest',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./menu-rest.component.css']
 })
 export class MenuRestComponent {
+
+  constructor(private carritoService: CarritoService) {
+    this.carritoService.loadCarritoScript();
+  }
 
 }
