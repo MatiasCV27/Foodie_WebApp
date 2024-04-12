@@ -94,6 +94,13 @@
     color: #B10303;
     font-size: 1.5rem;
     padding: 0 50px;
+    font-family: "Rowdies", sans-serif;
+}
+
+h4{
+    font-family: "Rowdies", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
 .info-content {
@@ -127,6 +134,9 @@
     border-radius: 6px;
     font-size: 1rem;
     box-sizing: border-box; 
+    font-family: "Blinker", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
 .botones-container {
@@ -139,11 +149,15 @@
 .btn-guardar {
     margin: 35px 10px;
     padding: 7.55px 25px;
-    border-radius: 15px;
-    color: #fff !important;
-    background-color: #500000 !important;
-    border: 1px solid #500000 !important;
+    border-radius: 8px;
+    color: #fff ;
+    background-color: #B10303;
+    border: 1px solid #500000;
     cursor: pointer;
+    font-size: 18px;
+    font-family: "Rowdies", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
 

@@ -1,22 +1,23 @@
-<main class="contaner-fluid p-4">
+<main class="container-fluid p-4">
     <section class="categorias">
-        <div class="categoria">Todos</div>
-        <div class="categoria">Pollerias</div>
-        <div class="categoria">Hamburgueserias</div>
-        <div class="categoria">Pizzerias</div>
-        <div class="categoria">Chifas</div>
-        <div class="categoria">Parrillas</div>
-        <div class="categoria">Tradicionales</div>
+        <button type="button" class="btn btn-custom" (click)="filtrarPorCategoria('Todos')">Todos</button>
+        <button type="button" class="btn btn-custom" (click)="filtrarPorCategoria('Pollos')">Pollerias</button>
+        <button type="button" class="btn btn-custom" (click)="filtrarPorCategoria('Hamburguesas')">Hamburgueserias</button>
+        <button type="button" class="btn btn-custom" (click)="filtrarPorCategoria('Pizzerias')">Pizzerias</button>
+        <button type="button" class="btn btn-custom" (click)="filtrarPorCategoria('Chifa')">Chifas</button>
+        <button type="button" class="btn btn-custom" (click)="filtrarPorCategoria('Parrilla')">Parrillas</button>
+        <button type="button" class="btn btn-custom" (click)="filtrarPorCategoria('Mariscos')">Mariscos</button>
+        <button type="button" class="btn btn-custom" (click)="filtrarPorCategoria('Tradicional')">Tradicionales</button>
     </section>
     <section class="restaurantes p-4">
         <div class="rest-items">
             <div class="card card-custom h-70" *ngFor="let item of collection.data">
                 <img [src]="item.imagen" class="card-img-top img-custom">
                 <div class="card-body">
-                    <h5 class="card-title text-center mb-2"><strong>{{ item.nombre }}</strong></h5>
+                    <h5 class="card-title text-center mb-2">{{ item.nombre }}</h5>
                     <p class="card-text">{{ item.descripcion }}</p>
-                    <div class="text-center p-2">
-                        <a href="#" class="btn-custom">Visitar</a>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-visitar"><a href="#">Visitar</a></button>
                     </div>
                 </div>
             </div>

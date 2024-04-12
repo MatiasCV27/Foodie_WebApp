@@ -10,27 +10,35 @@ import { RestaurantesService } from 'src/app/services/restaurantes.service';
 })
 export class RestaurantesComponent implements OnInit {
 
-  collection = { count: 5, data: [] as any[] }
+  collection = { count: 5, data: [] as any[] };
 
-  constructor(private restServices: RestaurantesService ) {
+  restaurantes: any[] = [];
 
-  }
+  constructor(private restServices: RestaurantesService) {}
 
   ngOnInit(): void {
-    
-    this.restServices.getRest().subscribe(respuesta => {
-      this.collection.data = respuesta.map((e: any) => {
-        return {
+    this.restServices.getRest().subscribe(
+      (respuesta: any[]) => {
+        this.restaurantes = respuesta.map((e: any) => ({
           idDoc: e.payload.doc.id,
           nombre: e.payload.doc.data().nombre,
           descripcion: e.payload.doc.data().descripcion,
           categoria: e.payload.doc.data().categoria,
           imagen: e.payload.doc.data().imagen
-        }
-      })
-    }, error => {
-      console.log(error)
-    })
+        }));
+        this.collection.data = this.restaurantes;
+      },
+      error => {
+        console.log(error)
+      }
+    );
   }
 
+  filtrarPorCategoria(categoria: string): void {
+    if (categoria === 'Todos') {
+      this.collection.data = this.restaurantes;
+    } else {
+      this.collection.data = this.restaurantes.filter(restaurante => restaurante.categoria === categoria);
+    }
+  }
 }

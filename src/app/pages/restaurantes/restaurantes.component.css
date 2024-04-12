@@ -7,8 +7,22 @@
     border: 1px solid #B10303;
     background-color: #FFF1F1 !important;
     border-radius: 10px;
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.btn-custom {
+    background-color: #FFF1F1;
+    color: #500000;
+    font-family: "Rowdies", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    /*border: 1px solid #B10303;*/
+}
+
+.btn-custom:hover {
+    background-color: #B10303;
+    color: #ffffff;
 }
 
 .rest-items {
@@ -17,18 +31,10 @@
     flex-wrap: wrap;
 }
 
-.categoria {
-    background-color: #FFF1F1;
-    border: 1px solid #B10303;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
 .card-custom .card-img-top {
     height: 40%;
     object-fit: cover;
     border-radius: 18px 18px 0 0 !important;
-
 }
 
 .card-custom {
@@ -41,25 +47,49 @@
     border: 1px solid #B10303 !important;
 }
 
-.card-custom .btn {
-    background-color: #007bff !important;
-    color: #500000 !important;
+.btn-visitar {
+    background-color: #B10303;
+    font-family: "Rowdies", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;;
 }
 
-.card-custom .btn:hover {
-    background-color: #0056b3;
+.btn-visitar:hover {
+    background-color: #FFF1F1;
+    color: #B10303;
+    border: 1px solid #B10303;
+}
+
+.btn-visitar:hover a {
+    color: #500000;
+    text-decoration: none;
+}
+
+.btn-visitar a{
+    color: #ffffff;
+    text-decoration: none;
 }
 
 .card-custom .card-title {
     font-size: 1.25em;
     color: #500000 !important;
+    font-family: "Rowdies", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
 .card-text {
     height: 98px;
     overflow-y: auto;
-    font-size: 14px !important;
+    font-size: 16px !important;
     line-height: 1.4 !important;
+    font-family: "Blinker", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
 .card-text::-webkit-scrollbar {
@@ -68,18 +98,4 @@
 
 .card-text::-webkit-scrollbar-thumb {
     background-color: #B10303;
-}
-
-.btn-custom {
-    background-color: #500000 !important;
-    color: #FFF1F1 !important;
-    border-radius: 8px;
-    padding: 10px 20px;
-    text-decoration: none !important;
-    font-size: 16px;
-}
-
-.btn-custom:hover {
-    background-color: #820606 !important;
-    color: #ffffff !important;
 }
