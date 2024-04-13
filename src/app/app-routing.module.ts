@@ -22,6 +22,7 @@ const routes: Routes = [
   { path: 'registro', component: RegistroComponent, pathMatch: 'full' },
   { path: 'restaurantes', component: RestaurantesComponent, pathMatch: 'full' },
   { path: 'menus', component: MenuRestComponent, pathMatch: 'full' },
+  { path: 'menu-rest', component: MenuRestComponent },
 
   { path: 'admin/gestion-menu', component: GestionMenuComponent, pathMatch: 'full' },
   { path: 'admin/gestion-restaurantes', component: GestionRestComponent, pathMatch: 'full' },
