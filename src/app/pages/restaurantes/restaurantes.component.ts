@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { RestaurantesService } from 'src/app/services/restaurantes.service';
+import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
   selector: 'app-restaurantes',
@@ -14,7 +15,7 @@ export class RestaurantesComponent implements OnInit {
 
   restaurantes: any[] = [];
 
-  constructor(private restServices: RestaurantesService) {}
+  constructor(private restServices: RestaurantesService, private menuService: MenuService, private router: Router) {}
 
   ngOnInit(): void {
     this.restServices.getRest().subscribe(
@@ -41,4 +42,15 @@ export class RestaurantesComponent implements OnInit {
       this.collection.data = this.restaurantes.filter(restaurante => restaurante.categoria === categoria);
     }
   }
+
+  verMenuRestaurante(nombreRestaurante: string): void {
+    console.log('Ver menú del restaurante:', nombreRestaurante);
+    this.menuService.getMenuPorRestaurante(nombreRestaurante).subscribe(platosDelRestaurante => {
+      this.router.navigate(['/menu-rest'], { state: { platos: platosDelRestaurante } }).then(() => {
+      }).catch(error => {
+        console.log(error);
+      });
+    });
+  }     
+
 }

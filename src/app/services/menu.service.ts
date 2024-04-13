@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore'
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +23,17 @@ export class MenuService {
 
   deleteRest(id: any) {
     return this.firestore.collection("restPlatos").doc(id).delete();
+  }
+
+  getMenuPorRestaurante(nombreRestaurante: string): Observable<any[]> {
+    return this.firestore.collection('restPlatos', ref => ref.where('idRest', '==', nombreRestaurante)).snapshotChanges().pipe(
+      map(platos => {
+        return platos.map(plato => {
+          const data: any = plato.payload.doc.data();
+          const id = plato.payload.doc.id;
+          return { id, ...data };
+        });
+      })
+    );
   }
 }

@@ -3,12 +3,13 @@
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 10px;
-    padding: 10px;
     border: 1px solid #B10303;
-    background-color: #FFF1F1 !important;
+    background-color: #ffffff;
     border-radius: 10px;
     max-width: 1000px;
+    padding: 10px;
     margin: 20px auto;
+    border-collapse: collapse;
 }
 
 .btn-custom {
@@ -17,7 +18,7 @@
     font-family: "Rowdies", sans-serif;
     font-weight: 300;
     font-style: normal;
-    /*border: 1px solid #B10303;*/
+    border: 1px solid #B10303;
 }
 
 .btn-custom:hover {
@@ -62,14 +63,11 @@
     background-color: #FFF1F1;
     color: #B10303;
     border: 1px solid #B10303;
-}
-
-.btn-visitar:hover a {
     color: #500000;
     text-decoration: none;
 }
 
-.btn-visitar a{
+.btn-visitar {
     color: #ffffff;
     text-decoration: none;
 }
