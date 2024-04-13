@@ -1,17 +1,17 @@
-<section class="contaner-fluid p-4">
-  <h2 class="titulo">{{ tituloMenu }}</h2>
-  <div class="row">
-    <div *ngFor="let plato of restPlatos" class="col-md-4 mb-4">
-      <div class="plato-carta">
-        <img [src]="plato.imagen" class="img-plato-carta img-item" />
-        <div class="title-plato-carta">
-          <span class="title-plato-titulo titulo-item">{{ plato.nombre }}</span>
-          <p>{{ plato.descripcion }}</p>
-          <div class="cta-wrap_tarjeta-rest">
-            <span class="precio_tarjeta-rest">S/. {{ plato.precio }}</span>
-            <div class="cta_tarjeta-rest">
-              <button class="boton-item">Agregar</button>
-            </div>
+<h2 class="titulo">{{ tituloMenu }}</h2>
+<section class="contaner-fluid p-4 c-menu">
+  <div class="cont-menus">
+    <div class="plato-carta" *ngFor="let plato of restPlatos">
+      <img [src]="plato.imagen" class="img-plato-carta img-item" />
+      <div class="title-plato-carta">
+        <div class="title-plato-titulo">
+          <span class="titulo-item">{{ plato.nombre }}</span>
+        </div>
+        <p>{{ plato.descripcion }}</p>
+        <div class="cta-wrap_tarjeta-rest">
+          <span class="precio_tarjeta-rest precio-item">S/. {{ plato.precio }}</span>
+          <div class="cta_tarjeta-rest">
+            <button class="boton-item" click="hacerVisibleCarrito()">Agregar</button>
           </div>
         </div>
       </div>
@@ -19,16 +19,21 @@
   </div>
   <div class="carrito" id="carrito">
     <div class="header-carrito">
-      <h4>Resumen de las Compras</h4>
+      <h4 class="m-0"><strong>Resumen de las Compras</strong></h4>
     </div>
     <div class="carrito-items">
     </div>
     <div class="carrito-total">
-      <div class="fila">
-        <strong>Tu Total</strong>
-        <span class="carrito-precio-total">
-          $120.000,00
-        </span>
+      <div class="fila m-0">
+        <div class="info-pagar">
+          <strong>Tu Total</strong>
+          <span class="carrito-precio-total">
+            $120.000,00
+          </span>
+        </div>
+        <div>
+          <button class="btn-pagar">Comprar <i class="fa-solid fa-bag-shopping"></i> </button>
+        </div>
       </div>
     </div>
   </div>
