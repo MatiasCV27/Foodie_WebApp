@@ -1,7 +1,7 @@
 <main class="p-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="titulo">Gestión de Usuarios</h2>
-        <button class="btn btn-success"><i class="bi bi-plus-circle"></i> Registrar</button>
+        <button class="btn btn-success" (click)="openSave(content)"><i class="bi bi-plus-circle"></i> Registrar</button>
     </div>
     <table id="TablaUsuario" class="table">
         <thead>
@@ -9,7 +9,7 @@
                 <th scope="col">Nombre</th>
                 <th scope="col">Género</th>
                 <th scope="col">Teléfono</th>
-                <th scope="col">Ubicacion</th>
+                <th scope="col">Ubicación</th>
                 <th scope="col">Nacimiento</th>
                 <th scope="col">Rol</th>
                 <th scope="col">Foto Perfil</th>
@@ -17,23 +17,74 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Juan Lopez Sanchez</td>
-                <td>Masculino</td>
-                <td>987654321</td>
-                <td>Lima</td>
-                <td>21/04/2000</td>
-                <td>ADMIN</td>
-                <td><img src="../../../../assets/images/imgPrueba/user.png" width="45"></td>
+            <tr *ngFor="let item of collection.data | paginate: config">
+                <td>{{ item.nombre }}</td>
+                <td>{{ item.genero }}</td>
+                <td>{{ item.telefono }}</td>
+                <td>{{ item.ubicacion }}</td>
+                <td>{{ item.nacimiento }}</td>
+                <td>{{ item.rol }}</td>
+                <td><img [src]="item.fotoPerfil" width="45"></td>
                 <td>
-                    <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
-                    <button class="btn btn-danger btnDelete"><i class="bi bi-trash3-fill"></i></button>
+                    <button class="btn btn-warning" (click)="openEdit(content, item)"><i class="bi bi-pencil-square"></i></button>
+                    <button class="btn btn-danger btnDelete" (click)="eliminarRest(item)"><i class="bi bi-trash3-fill"></i></button>
                 </td>
             </tr>
         </tbody>
     </table>
-</main>
 
-<script>
-    let table = new DataTable('#TablaUsuario');
-</script>
+    <div class="paginationContent">
+        <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+    </div>
+
+    <!-- Registrar Modal -->
+    <ng-template #content let-modal>
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Registrar/Actualizar Restaurantes</h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="mb-3">
+
+                    <form [formGroup]="usuarioForm">
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input type="text" formControlName="nombre" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Género</label>
+                            <input type="text" formControlName="genero" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Teléfono</label>
+                            <input type="text" formControlName="telefono" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Ubicación</label>
+                            <input type="text" formControlName="ubicacion" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Nacimiento</label>
+                            <input type="text" formControlName="nacimiento" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Rol</label>
+                            <input type="text" formControlName="rol" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Foto Perfil</label>
+                            <input type="text" formControlName="fotoPerfil" class="form-control">
+                        </div>
+                    </form>
+
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="guardarUsuario()" *ngIf="!btnActualizar">Registrar</button>
+            <button type="button" class="btn btn-outline-dark" (click)="actualizarUsuario()" *ngIf="btnActualizar">Actualizar</button>
+        </div>
+    </ng-template>
+
+</main>
