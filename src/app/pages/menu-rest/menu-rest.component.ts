@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CarritoService } from 'src/app/services/carrito.service';
 import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
@@ -13,7 +14,9 @@ export class MenuRestComponent implements OnInit{
   restPlatos: any[] = [];
   tituloMenu: string = 'Menú General';
 
-  constructor(private menuService: MenuService) { }
+  constructor(private menuService: MenuService, carritoService: CarritoService) {
+    carritoService.loadCarritoScript();
+   }
 
   ngOnInit(): void {
     if (window.history.state && window.history.state.platos) {
