@@ -7,7 +7,7 @@
         <thead>
             <tr>
                 <th scope="col">Nombre</th>
-                <th scope="col">Correo</th>
+                <th scope="col">Email</th>
                 <th scope="col">Teléfono</th>
                 <th scope="col">Ubicación</th>
                 <th scope="col">Nacimiento</th>
@@ -19,7 +19,7 @@
         <tbody>
             <tr *ngFor="let item of collection.data | paginate: config">
                 <td>{{ item.nombre }}</td>
-                <td>{{ item.correo }}</td>
+                <td>{{ item.email }}</td>
                 <td>{{ item.telefono }}</td>
                 <td>{{ item.ubicacion }}</td>
                 <td>{{ item.nacimiento }}</td>
@@ -53,8 +53,8 @@
                             <input type="text" formControlName="nombre" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>Correo</label>
-                            <input type="text" formControlName="correo" class="form-control">
+                            <label>Email</label>
+                            <input type="text" formControlName="email" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Teléfono</label>
