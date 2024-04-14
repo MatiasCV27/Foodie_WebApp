@@ -17,6 +17,7 @@ export class GestionRestComponent implements OnInit {
   btnActualizar: boolean;
 
   restauranteForm: FormGroup;
+  categorias: string[] = ['Pollos', 'Hamburguesas', 'Pizzerias', 'Chifa', 'Parrillas', 'Mariscos', 'Tradicional'];
 
   constructor(
     public fb: FormBuilder,

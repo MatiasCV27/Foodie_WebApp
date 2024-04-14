@@ -17,6 +17,7 @@ export class GestionMenuComponent implements OnInit{
   btnActualizar: boolean;
 
   menuForm: FormGroup;
+  categorias: string[] = ['Pollos', 'Hamburguesas', 'Pizzerias', 'Chifa', 'Parrillas', 'Mariscos', 'Tradicional'];
 
   constructor(
     public fb: FormBuilder,
