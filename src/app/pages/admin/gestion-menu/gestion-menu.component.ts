@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validator, Validators } from '@ang
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { MenuService } from 'src/app/services/menu.service';
+import { RestaurantesService } from 'src/app/services/restaurantes.service';
 
 @Component({
   selector: 'app-gestion-menu',
@@ -15,13 +16,14 @@ export class GestionMenuComponent implements OnInit{
   collection = { count: 5, data: [] as any[] }
   idDocUpdate: string;
   btnActualizar: boolean;
+  restaurantes= { count: 5, data: [] as any[] }
 
   menuForm: FormGroup;
-  categorias: string[] = ['Pollos', 'Hamburguesas', 'Pizzerias', 'Chifa', 'Parrillas', 'Mariscos', 'Tradicional'];
 
   constructor(
     public fb: FormBuilder,
-    private menuServices: MenuService
+    private menuServices: MenuService,
+    private restauranteServices: RestaurantesService
 
   ) {
     this.idDocUpdate = '';
@@ -30,7 +32,7 @@ export class GestionMenuComponent implements OnInit{
       nombre: new FormControl('', Validators.required),
       descripcion: new FormControl('', Validators.required),
       cantidad: new FormControl('', Validators.required),
-      categoria: new FormControl('', Validators.required),
+      idRest: new FormControl('', Validators.required),
       precio: new FormControl('', Validators.required),
       imagen: new FormControl('', Validators.required),
     })
@@ -52,9 +54,19 @@ export class GestionMenuComponent implements OnInit{
           nombre: e.payload.doc.data().nombre,
           descripcion: e.payload.doc.data().descripcion,
           cantidad: e.payload.doc.data().cantidad,
-          categoria: e.payload.doc.data().categoria,
+          idRest: e.payload.doc.data().idRest,
           precio: e.payload.doc.data().precio,
           imagen: e.payload.doc.data().imagen
+        }
+      })
+    }, error => {
+      console.log(error)
+    })
+
+    this.restauranteServices.getRest().subscribe(respuesta => {
+      this.restaurantes.data = respuesta.map((e: any) => {
+        return {
+          nombre: e.payload.doc.data().nombre,
         }
       })
     }, error => {
@@ -114,7 +126,7 @@ export class GestionMenuComponent implements OnInit{
       nombre: item.nombre,
       descripcion: item.descripcion,
       cantidad: item.cantidad,
-      categoria: item.categoria,
+      idRest: item.idRest,
       precio: item.precio,
       imagen: item.imagen,
     })
