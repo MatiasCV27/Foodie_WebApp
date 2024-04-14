@@ -19,21 +19,22 @@
   </div>
   <div class="carrito" id="carrito">
     <div class="header-carrito">
-      <h4 class="m-0"><strong>Resumen de las Compras</strong></h4>
+      <h4 class="m-0">Resumen de las Compras</h4>
     </div>
     <div class="carrito-items">
     </div>
     <div class="carrito-total">
       <div class="fila m-0">
         <div class="info-pagar">
-          <strong>Tu Total</strong>
+          Tu Total
           <span class="carrito-precio-total">
             $120.000,00
           </span>
         </div>
-        <div>
+        <!--<div>
           <button class="btn-pagar">Comprar <i class="fa-solid fa-bag-shopping"></i> </button>
-        </div>
+        </div>-->
+        <ngx-paypal style="margin-top: 20px;" [config]="payPalConfig"></ngx-paypal>
       </div>
     </div>
   </div>

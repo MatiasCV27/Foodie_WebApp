@@ -26,7 +26,7 @@ export class MenuService {
   }
   
   getMenuPorRestaurante(nombreRestaurante: string): Observable<any[]> {
-    return this.firestore.collection('restPlatos', ref => ref.where('idRest', '==', nombreRestaurante)).snapshotChanges().pipe(
+    return this.firestore.collection('restPlatos', ref => ref.where('categoria', '==', nombreRestaurante)).snapshotChanges().pipe(
       map(platos => {
         return platos.map(plato => {
           const data: any = plato.payload.doc.data();
