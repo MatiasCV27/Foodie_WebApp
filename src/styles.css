@@ -16,7 +16,6 @@ body {
 
 .carrito .carrito-item .carrito-item-titulo {
     display: block;
-    font-weight: bold;
     margin-bottom: 15px;
     text-transform: uppercase;
     color: #b10303;
@@ -36,6 +35,9 @@ body {
     width: 30px;
     padding: 5px;
     text-align: center;
+    font-family: "Rowdies";
+    font-style: normal;
+    font-weight: 300;
 }
 
 .carrito .carrito-item .selector-cantidad i {
@@ -46,7 +48,6 @@ body {
 }
 
 .carrito .carrito-item .carrito-item-precio {
-    font-weight: bold;
     display: inline-block;
     font-size: 15px;
     margin-bottom: 5px;
@@ -67,6 +68,9 @@ body {
     cursor: pointer;
     display: block;
     background: transparent;
+    font-family: "Rowdies";
+    font-style: normal;
+    font-weight: 300;
 }
 
 .carrito .carrito-item .btn-eliminar:hover {

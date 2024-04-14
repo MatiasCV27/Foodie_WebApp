@@ -66,9 +66,9 @@
 .title-plato-titulo {
   margin: 12px 0 12px 0 !important;
   color: #b10303;
-  font-family: "Inder";
+  font-family: "Blinker";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 15px;
   line-height: 19px;
   text-align: center;
@@ -103,9 +103,9 @@
 .precio_tarjeta-rest {
   font-size: 13px;
   color: #550000;
-  font-family: "Inder";
+  font-family: "Blinker";
   font-style: normal;
-  font-weight: 400;
+  font-weight: bold;
   line-height: 16px;
 }
 
@@ -152,6 +152,19 @@
   padding: 30px 0;
 }
 
+.carrito-items {
+  font-family: "Rowdies";
+  font-style: normal;
+  font-weight: 300;
+}
+
+.header-carrito h4{
+  font-family: "Rowdies";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 22px;
+}
+
 .carrito .carrito-item .selector-cantidad i {
   font-size: 18px;
   width: 32px;
@@ -185,6 +198,10 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-family: "Rowdies";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
 }
 
 .btn-pagar {
@@ -195,18 +212,25 @@
   background: #b10303;
   color: #fff;
   border-radius: 5px;
-  font-size: 15px;
+  font-size: 18px;
   padding: 15px;
   text-align: center;
   font-weight: bold;
   cursor: pointer;
   transition: .3s;
+  font-family: "Rowdies";
+  font-style: normal;
+  font-weight: 300;
 }
 
 .btn-pagar:hover {
   background: #ffc0cb;
   color: #b10303;
   border: 2px solid #b10303;
+  font-size: 18px;
+  font-family: "Rowdies";
+  font-style: normal;
+  font-weight: 300;
 }
 
 .carrito-total .btn-pagar:hover {

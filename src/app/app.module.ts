@@ -12,6 +12,9 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 
+// Paypal
+import { NgxPayPalModule } from 'ngx-paypal'; 
+
 // Angular Material
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -61,6 +64,7 @@ import { GestionRestAsociadosComponent } from './pages/admin/gestion-rest-asocia
   ],
   imports: [
     BrowserModule,
+    NgxPayPalModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
