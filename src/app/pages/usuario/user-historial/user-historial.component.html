@@ -1,111 +1,28 @@
 <div class="historial">
     <h1 class="titulo-historial">Historial de Pedidos</h1>
     <div class="cont-historial">
-        <div class="card-historial">
-            <h5 class="card-hist-titulo m-0">Fecha de compra: 2024-03-04 14:30:18</h5>
+        <div *ngFor="let v of collection.data" class="card-historial">
+            <h5 class="card-hist-titulo m-0">Fecha de compra: {{ v.fecha }}</h5>
             <h5 class="card-hist-cont-header">
                 <p class="m-0">Productos:</p><p class="m-0">Precio en S/:</p>
             </h5>
             <h5 class="card-hist-cont">
-                <div class="m-0">
-                    <p class="m-0">Parrilladad Mixta</p>
-                    <p class="m-0">Ceviche</p>
-                    <p class="m-0">Limonada de Coco</p>
-                    <p class="m-0">Picarones</p>
-                    <p class="m-0">Chicha Morada</p>
-                    <p class="m-0">Chuleta de cerdo</p>
-
+                <div class="productos">
+                    <div class="m-0" *ngFor="let nombre of v.nombres.split(', ')">
+                        <p class="m-0">{{ nombre }}</p>
+                    </div>
                 </div>
-                <div class="m-0 costos">
-                    <p class="m-0">S/ 115</p>
-                    <p class="m-0">S/ 55</p>
-                    <p class="m-0">S/ 15</p>
-                    <p class="m-0">S/ 20</p>
-                    <p class="m-0">S/ 40</p>
+                <div class="precios">
+                    <div class="m-0 costos" *ngFor="let precio of v.precios.split(', ')">
+                        <p class="m-0">{{ 'S/ ' + precio }}</p>
+                    </div>
                 </div>
             </h5>
             <h5 class="card-hist-footer">
-                <p>Precio total:</p><p>S/ 300</p>
-            </h5>
-        </div>
-        <div class="card-historial">
-            <h5 class="card-hist-titulo m-0">Fecha de compra: 2024-03-04 14:30:18</h5>
-            <h5 class="card-hist-cont-header">
-                <p class="m-0">Productos:</p><p class="m-0">Precio en S/:</p>
-            </h5>
-            <h5 class="card-hist-cont">
-                <div class="m-0">
-                    <p class="m-0">Parrilladad Mixta</p>
-                    <p class="m-0">Ceviche</p>
-                    <p class="m-0">Limonada de Coco</p>
-                    <p class="m-0">Picarones</p>
-                    <p class="m-0">Chicha Morada</p>
-
-                </div>
-                <div class="m-0 costos">
-                    <p class="m-0">S/ 115</p>
-                    <p class="m-0">S/ 55</p>
-                    <p class="m-0">S/ 15</p>
-                    <p class="m-0">S/ 20</p>
-                    <p class="m-0">S/ 40</p>
-                </div>
-            </h5>
-            <h5 class="card-hist-footer">
-                <p>Precio total:</p><p>S/ 260</p>
-            </h5>
-        </div>
-        <div class="card-historial">
-            <h5 class="card-hist-titulo m-0">Fecha de compra: 2024-03-04 14:30:18</h5>
-            <h5 class="card-hist-cont-header">
-                <p class="m-0">Productos:</p><p class="m-0">Precio en S/:</p>
-            </h5>
-            <h5 class="card-hist-cont">
-                <div class="m-0">
-                    <p class="m-0">Parrilladad Mixta</p>
-                    <p class="m-0">Ceviche</p>
-                    <p class="m-0">Limonada de Coco</p>
-                    <p class="m-0">Picarones</p>
-                    <p class="m-0">Chicha Morada</p>
-                    <p class="m-0">Chuleta de cerdo</p>
-                    <p class="m-0">Parrilladad Mixta</p>
-                    <p class="m-0">Ceviche</p>
-                    <p class="m-0">Limonada de Coco</p>
-                    <p class="m-0">Picarones</p>
-                </div>
-                <div class="m-0 costos">
-                    <p class="m-0">S/ 115</p>
-                    <p class="m-0">S/ 55</p>
-                    <p class="m-0">S/ 15</p>
-                    <p class="m-0">S/ 20</p>
-                    <p class="m-0">S/ 40</p>
-                    <p class="m-0">S/ 115</p>
-                    <p class="m-0">S/ 55</p>
-                    <p class="m-0">S/ 15</p>
-                    <p class="m-0">S/ 20</p>
-                    <p class="m-0">S/ 40</p>
-                </div>
-            </h5>
-            <h5 class="card-hist-footer">
-                <p>Precio total:</p><p>S/ 600</p>
-            </h5>
-        </div>
-        <div class="card-historial">
-            <h5 class="card-hist-titulo m-0">Fecha de compra: 2024-03-04 14:30:18</h5>
-            <h5 class="card-hist-cont-header">
-                <p class="m-0">Productos:</p><p class="m-0">Precio en S/:</p>
-            </h5>
-            <h5 class="card-hist-cont">
-                <div class="m-0">
-                    <p class="m-0">Parrilladad Mixta</p>
-
-                </div>
-                <div class="m-0 costos">
-                    <p class="m-0">S/ 115</p>
-                </div>
-            </h5>
-            <h5 class="card-hist-footer">
-                <p>Precio total:</p><p>S/ 115</p>
+                <p>Precio total:</p><p>{{ 'S/ ' + v.pTotal }}</p>
             </h5>
         </div>
     </div>
 </div>
+
+
