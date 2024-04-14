@@ -17,6 +17,7 @@ export class GestionUserComponent implements OnInit{
   btnActualizar: boolean;
 
   usuarioForm: FormGroup;
+  roles: string[] = ['ADMIN', 'USER'];
 
   constructor(
     public fb: FormBuilder,
