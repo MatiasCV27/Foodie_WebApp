@@ -18,8 +18,36 @@ export class UserService {
   }
 
   google(): any {
-    const proveedor = new GoogleAuthProvider();
-    return signInWithPopup(this.auth, proveedor);
+    return new Promise<any>((resolve, reject) => {
+      const provider = new GoogleAuthProvider();
+      signInWithPopup(this.auth, provider)
+        .then((result) => {
+          const userData = {
+            email: result.user.email,
+            username: result.user.displayName
+          };
+          resolve(userData);
+        })
+        .catch((error) => {
+          reject(error);
+        });
+    });
+  }
+
+  getUserByEmail(email: string): Promise<any> {
+    return new Promise<any>((resolve, reject) => {
+      this.firestore.collection('users', ref => ref.where('email', '==', email))
+        .valueChanges()
+        .subscribe((users) => {
+          if (users && users.length > 0) {
+            resolve(users[0]);
+          } else {
+            resolve(null);
+          }
+        }, error => {
+          reject(error);
+        });
+    });
   }
  
   logout() {
