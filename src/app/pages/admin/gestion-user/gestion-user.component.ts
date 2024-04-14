@@ -28,7 +28,7 @@ export class GestionUserComponent implements OnInit{
     this.btnActualizar = false;
     this.usuarioForm = new FormGroup({
       nombre: new FormControl('', Validators.required),
-      correo: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
       telefono: new FormControl('', Validators.required),
       ubicacion: new FormControl('', Validators.required),
       nacimiento: new FormControl('', Validators.required),
@@ -51,7 +51,7 @@ export class GestionUserComponent implements OnInit{
         return {
           idDoc: e.payload.doc.id,
           nombre: e.payload.doc.data().nombre,
-          correo: e.payload.doc.data().correo,
+          email: e.payload.doc.data().email,
           telefono: e.payload.doc.data().telefono,
           ubicacion: e.payload.doc.data().ubicacion,
           nacimiento: e.payload.doc.data().nacimiento,
@@ -114,7 +114,7 @@ export class GestionUserComponent implements OnInit{
     this.usuarioForm.setValue({
       //idDoc: item.idDoc,
       nombre: item.nombre,
-      correo: item.correo,
+      email: item.email,
       telefono: item.telefono,
       ubicacion: item.ubicacion,
       nacimiento: item.nacimiento,
