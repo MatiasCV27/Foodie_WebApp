@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { DataService } from 'src/app/services/data.service';
 import { VentasService } from 'src/app/services/ventas.service';
 
 @Component({
@@ -13,11 +14,11 @@ export class UserHistorialComponent implements OnInit {
 
   ventas: any[] = [];
 
-  constructor(private restServices: VentasService, private afAuth: AngularFireAuth) { }
+  constructor(private restServices: VentasService, private afAuth: AngularFireAuth, public dataService: DataService) { }
 
   // Con Correo de Muestra
   ngOnInit(): void {
-    const correoAFiltrar = 'matiascriollo57@gmail.com';
+    const correoAFiltrar = this.dataService.getCorreo();
 
     this.restServices.getVent().subscribe(
       (respuesta: any[]) => {

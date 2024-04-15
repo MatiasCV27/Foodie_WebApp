@@ -19,7 +19,7 @@
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="'/menus'">Menú</a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown" *ngIf="userservice.isLoggedIn() && isAdmin()"> 
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"aria-expanded="false">Mantenimiento</a>
                     <ul class="dropdown-menu mant-dropdown">
                         <li><a class="dropdown-item" [routerLink]="'/admin/gestion-restaurantes'">Restaurantes</a></li>
@@ -28,8 +28,8 @@
                         <li><a class="dropdown-item" [routerLink]="'/admin/gestion-user'">Usuarios</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Usuario</a>
+                <li class="nav-item dropdown" *ngIf="userservice.isLoggedIn()">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ dataService.username }}</a>
                     <ul class="dropdown-menu mant-dropdown">
                         <li><a class="dropdown-item" [routerLink]="'/user'">Perfil</a></li>
                         <li>
@@ -38,10 +38,10 @@
                         <li><button class="dropdown-item" (click)="logOut()">Cerrar sesión</button></li>
                     </ul>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" *ngIf="!userservice.isLoggedIn()">
                     <a class="nav-link" [routerLink]="'/registro'">Registrarse</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" *ngIf="!userservice.isLoggedIn()">
                     <a class="nav-link" [routerLink]="'/login'">Login</a>
                 </li>
             </ul>

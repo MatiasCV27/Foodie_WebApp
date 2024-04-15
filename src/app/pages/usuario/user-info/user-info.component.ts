@@ -2,6 +2,7 @@ import { Component, OnInit,TemplateRef,inject  } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { FormBuilder, FormControl, FormGroup, Validator, Validators } from '@angular/forms';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { DataService } from 'src/app/services/data.service';
 
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
@@ -20,7 +21,10 @@ export class UserInfoComponent implements OnInit {
   btnActualizar: boolean;
   usuarioForm: FormGroup;
 
-  constructor(private userServices: UserService, private afAuth: AngularFireAuth, public fb: FormBuilder) {
+  constructor(
+    private userServices: UserService, 
+    public dataService: DataService,
+    public fb: FormBuilder,) {
     this.idDocUpdate = '';
     this.btnActualizar = false;
     this.usuarioForm = new FormGroup({
@@ -41,7 +45,7 @@ export class UserInfoComponent implements OnInit {
       totalItem: this.collection.count
     }
     
-    const correoAFiltrar = 'betzaberh.04@gmail.com';
+    const correoAFiltrar = this.dataService.getCorreo();
 
     this.userServices.getUsu().subscribe(
       (respuesta: any[]) => {
