@@ -43,7 +43,7 @@ export class DataService {
         .valueChanges()
         .subscribe((users: any[]) => {
           if (users && users.length > 0 && users[0].rol) {
-            resolve(users[0].email);
+            resolve(users[0].nombre);
           } else {
             resolve(null);
           }
