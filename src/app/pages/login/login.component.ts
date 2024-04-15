@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { DataService } from 'src/app/services/data.service';
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
 
@@ -9,11 +10,11 @@ import Swal from 'sweetalert2';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent { 
+export class LoginComponent {
 
   formLogin: FormGroup;
 
-  constructor(private userservices: UserService, private router: Router) {
+  constructor(private userservices: UserService, private router: Router, public dataService: DataService) {
     this.formLogin = new FormGroup({
       email: new FormControl(),
       password: new FormControl(),
@@ -36,6 +37,15 @@ export class LoginComponent {
 
     this.userservices.login(this.formLogin.value)
       .then(response => {
+        this.dataService.getUserRole(this.formLogin.value.email)
+          .then((role) => {
+            this.dataService.setUserRol(role);
+          })
+        this.dataService.getUsername(this.formLogin.value.email)
+          .then((username) => {
+            this.dataService.setUsername(username);
+          })
+        this.dataService.setCorreo(this.formLogin.value.email)
         console.log(response);
         this.router.navigate(['']);
         Swal.fire({
@@ -57,8 +67,8 @@ export class LoginComponent {
           background: 'rgba(255, 241, 241, 1)',
           color: 'rgba(80, 0, 0, 1)',
           confirmButtonColor: 'rgba(177, 3, 3, 1)',
+        });
       });
-    });
   }
 
   onGoogle() {
@@ -67,7 +77,7 @@ export class LoginComponent {
         const { email, username } = userData;
         const userEmail = email;
         const nameUser = username;
-        
+
         this.userservices.getUserByEmail(userEmail)
           .then((existingUser: any) => {
             if (existingUser) {
@@ -105,9 +115,9 @@ export class LoginComponent {
                 });
             }
           })
-          /*.catch(error: => {
-            console.log(error);
-          });*/
+        /*.catch(error: => {
+          console.log(error);
+        });*/
       })
       .catch(() => {
         Swal.fire({
