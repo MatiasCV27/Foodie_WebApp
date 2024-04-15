@@ -32,7 +32,7 @@ export class GestionMenuComponent implements OnInit{
       nombre: new FormControl('', Validators.required),
       descripcion: new FormControl('', Validators.required),
       cantidad: new FormControl('', Validators.required),
-      idRest: new FormControl('', Validators.required),
+      categoria: new FormControl('', Validators.required),
       precio: new FormControl('', Validators.required),
       imagen: new FormControl('', Validators.required),
     })
@@ -54,7 +54,7 @@ export class GestionMenuComponent implements OnInit{
           nombre: e.payload.doc.data().nombre,
           descripcion: e.payload.doc.data().descripcion,
           cantidad: e.payload.doc.data().cantidad,
-          idRest: e.payload.doc.data().idRest,
+          categoria: e.payload.doc.data().categoria,
           precio: e.payload.doc.data().precio,
           imagen: e.payload.doc.data().imagen
         }
@@ -126,7 +126,7 @@ export class GestionMenuComponent implements OnInit{
       nombre: item.nombre,
       descripcion: item.descripcion,
       cantidad: item.cantidad,
-      idRest: item.idRest,
+      categoria: item.categoria,
       precio: item.precio,
       imagen: item.imagen,
     })
