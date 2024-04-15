@@ -13,6 +13,7 @@ import Swal from 'sweetalert2';
 export class LoginComponent {
 
   formLogin: FormGroup;
+  isGoogleButtonClicked: boolean = false;
 
   constructor(private userservices: UserService, private router: Router, public dataService: DataService) {
     this.formLogin = new FormGroup({
@@ -22,7 +23,7 @@ export class LoginComponent {
       telefono: new FormControl('No data'),
       ubicacion: new FormControl('No data'),
       nacimiento: new FormControl('No data'),
-      rol: new FormControl('No data'),
+      rol: new FormControl('USER'),
       fotoPerfil: new FormControl('No data'),
     })
   }
@@ -60,24 +61,26 @@ export class LoginComponent {
       })
       .catch(error => {
         console.log(error);
-        Swal.fire({
-          icon: 'error',
-          title: 'Error en inicio de sesión',
-          text: 'Correo electrónico o contraseña incorrectos. Por favor, verifica tus credenciales.',
-          background: 'rgba(255, 241, 241, 1)',
-          color: 'rgba(80, 0, 0, 1)',
-          confirmButtonColor: 'rgba(177, 3, 3, 1)',
-        });
+        if (this.isGoogleButtonClicked == false) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error en inicio de sesión',
+            text: 'Correo electrónico o contraseña incorrectos. Por favor, verifica tus credenciales.',
+            background: 'rgba(255, 241, 241, 1)',
+            color: 'rgba(80, 0, 0, 1)',
+            confirmButtonColor: 'rgba(177, 3, 3, 1)',
+          });
+        }
       });
   }
 
   onGoogle() {
+    this.isGoogleButtonClicked = true;
     this.userservices.google()
       .then((userData: any) => {
         const { email, username } = userData;
         const userEmail = email;
         const nameUser = username;
-
         this.userservices.getUserByEmail(userEmail)
           .then((existingUser: any) => {
             if (existingUser) {
@@ -129,4 +132,5 @@ export class LoginComponent {
         });
       });
   }
+
 }

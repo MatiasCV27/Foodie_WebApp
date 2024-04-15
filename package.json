@@ -28,6 +28,7 @@
     "firebase": "^9.23.0",
     "ngx-pagination": "^6.0.3",
     "ngx-paypal": "^11.0.0",
+    "ngx-ui-loader": "^13.0.0",
     "rxfire": "^6.0.5",
     "rxjs": "~7.8.0",
     "sweetalert2": "^11.10.7",

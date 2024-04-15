@@ -21,7 +21,7 @@ export class RegistroComponent {
       telefono: new FormControl('No data'),
       ubicacion: new FormControl('No data'),
       nacimiento: new FormControl('No data'),
-      rol: new FormControl('No data'),
+      rol: new FormControl('USER'),
       fotoPerfil: new FormControl('No data'),
     })
   }

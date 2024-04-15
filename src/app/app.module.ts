@@ -23,6 +23,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+// Loader
+import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
+
 // Componentes
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -78,6 +81,10 @@ import { GestionRestAsociadosComponent } from './pages/admin/gestion-rest-asocia
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     NgbModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground: true
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
