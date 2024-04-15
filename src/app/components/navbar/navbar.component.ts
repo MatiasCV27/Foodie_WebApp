@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from 'src/app/services/data.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -9,7 +10,13 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class NavbarComponent {
 
-  constructor(private userservice: UserService, private router: Router) {}
+  constructor(
+    public userservice: UserService, 
+    public dataService: DataService,
+    private router: Router,
+  ) {
+
+  }
 
   logOut() {
     this.userservice.logout()
@@ -17,6 +24,14 @@ export class NavbarComponent {
       this.router.navigate(['']);
     })
     .catch(error => console.log(error));
+  }
+
+  isAdmin() {
+    if (this.dataService.getUserRol() === 'ADMIN') {
+      return true
+    } else {
+      return false
+    }
   }
 
 }

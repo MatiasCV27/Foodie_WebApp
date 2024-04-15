@@ -7,7 +7,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 })
 export class UserService {
 
-  constructor(private auth:Auth, private firestore: AngularFirestore) { }
+  constructor(private auth: Auth, private firestore: AngularFirestore) { }
 
   registro({email, password}:any) {
     return createUserWithEmailAndPassword(this.auth, email, password);
@@ -54,6 +54,11 @@ export class UserService {
     return signOut(this.auth);
   }
   
+  isLoggedIn(): boolean {
+    return !!this.auth.currentUser; 
+  }
+
+  // CRUD
   getUsu() {
     return this.firestore.collection("users").snapshotChanges();
   }
