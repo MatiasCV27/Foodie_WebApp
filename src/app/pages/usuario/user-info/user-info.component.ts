@@ -4,6 +4,7 @@ import { FormBuilder, FormControl, FormGroup, Validator, Validators } from '@ang
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { UserService } from 'src/app/services/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-user-info',
@@ -68,8 +69,18 @@ export class UserInfoComponent implements OnInit {
       this.userServices.updateUsu(this.idDocUpdate , this.usuarioForm.value).then(resp => {
         this.usuarioForm.reset();
         this.modalService.dismissAll();
+        Swal.fire({
+          icon: 'success',
+          title: 'Perfil Actualizado Correctamente',
+          text: '¡Éxito!',
+          timer: 2000,
+          background: 'rgba(255, 241, 241, 1)',
+          color: 'rgba(80, 0, 0, 1)',
+          confirmButtonColor: 'rgba(177, 3, 3, 1)',
+        });
       }).catch(error => {
         console.log(error)
+        Swal.fire('¡Error!', 'Hubo un Error al Actualizar el Perfil', 'error');
       })
     }
   }

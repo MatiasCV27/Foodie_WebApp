@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validator, Validators } from '@ang
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { RestAsociadosService } from 'src/app/services/rest-asociados.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-gestion-rest-asociados',
@@ -66,8 +67,18 @@ export class GestionRestAsociadosComponent implements OnInit{
     this.asociadosServices.createAsoc(this.asociadosForm.value).then(respuesta => {
       this.asociadosForm.reset();
       this.modalService.dismissAll();
+      Swal.fire({
+        icon: 'success',
+        title: 'Acuerdo Comercial Guardado Correctamente',
+        text: '¡Éxito!',
+        timer: 2000,
+        background: 'rgba(255, 241, 241, 1)',
+        color: 'rgba(80, 0, 0, 1)',
+        confirmButtonColor: 'rgba(177, 3, 3, 1)',
+      });
     }).catch(error => {
       console.log(error)
+      Swal.fire('¡Error!', 'Hubo un Error al Guardar el Acuerdo Comercial', 'error');
     })
   }
 
@@ -76,14 +87,52 @@ export class GestionRestAsociadosComponent implements OnInit{
       this.asociadosServices.updateAsoc(this.idDocUpdate , this.asociadosForm.value).then(resp => {
         this.asociadosForm.reset();
         this.modalService.dismissAll();
+        Swal.fire({
+          icon: 'success',
+          title: 'Acuerdo Comercial Actualizado Correctamente',
+          text: '¡Éxito!',
+          timer: 2000,
+          background: 'rgba(255, 241, 241, 1)',
+          color: 'rgba(80, 0, 0, 1)',
+          confirmButtonColor: 'rgba(177, 3, 3, 1)',
+        });
       }).catch(error => {
         console.log(error)
+        Swal.fire('¡Error!', 'Hubo un Error al Actualizar el Acuerdo Comercial', 'error');
       })
     }
   }
 
   eliminarAsoc(item: any): void {
-    this.asociadosServices.deleteAsoc(item.idDoc)
+    Swal.fire({
+      title: '¿Estás Seguro?',
+      text: 'Esta acción no se puede deshacer',
+      icon: 'question',
+      background: 'rgba(255, 241, 241, 1)',
+      color: 'rgba(80, 0, 0, 1)',
+      showCancelButton: true,
+      confirmButtonColor: '#B10303',
+      cancelButtonColor: '#500000',
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.asociadosServices.deleteAsoc(item.idDoc).then(() => {
+          Swal.fire({
+            icon: 'success',
+            title: 'Acuerdo Comercial Eliminado Correctamente',
+            text: '¡Éxito!',
+            timer: 2000,
+            background: 'rgba(255, 241, 241, 1)',
+            color: 'rgba(80, 0, 0, 1)',
+            confirmButtonColor: 'rgba(177, 3, 3, 1)',
+          });
+        }).catch(error => {
+          console.log(error);
+          Swal.fire('¡Error!', 'Hubo un Error al Eliminar el Acuerdo Comercial', 'error');
+        });
+      }
+    });
   }  
 
   // Modal

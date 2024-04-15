@@ -4,6 +4,7 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { MenuService } from 'src/app/services/menu.service';
 import { RestaurantesService } from 'src/app/services/restaurantes.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-gestion-menu',
@@ -83,9 +84,19 @@ export class GestionMenuComponent implements OnInit{
     this.menuServices.createMen(this.menuForm.value).then(respuesta => {
       this.menuForm.reset();
       this.modalService.dismissAll();
+      Swal.fire({
+        icon: 'success',
+        title: 'Menú Guardado Correctamente',
+        text: '¡Éxito!',
+        timer: 2000,
+        background: 'rgba(255, 241, 241, 1)',
+        color: 'rgba(80, 0, 0, 1)',
+        confirmButtonColor: 'rgba(177, 3, 3, 1)',
+      });
     }).catch(error => {
-      console.log(error)
-    })
+      console.log(error);
+      Swal.fire('¡Error!', 'Hubo un Error al Guardar el Menú', 'error');
+    });
   }
 
   actualizarMen() {
@@ -93,15 +104,53 @@ export class GestionMenuComponent implements OnInit{
       this.menuServices.updateMen(this.idDocUpdate , this.menuForm.value).then(resp => {
         this.menuForm.reset();
         this.modalService.dismissAll();
+        Swal.fire({
+          icon: 'success',
+          title: 'Menú Actualizado Correctamente',
+          text: '¡Éxito!',
+          timer: 2000,
+          background: 'rgba(255, 241, 241, 1)',
+          color: 'rgba(80, 0, 0, 1)',
+          confirmButtonColor: 'rgba(177, 3, 3, 1)',
+        });
       }).catch(error => {
-        console.log(error)
-      })
+        console.log(error);
+        Swal.fire('¡Error!', 'Hubo un Error al Actualizar el Menú', 'error');
+      });
     }
   }
 
   eliminarMen(item: any): void {
-    this.menuServices.deleteMen(item.idDoc)
-  }  
+    Swal.fire({
+      title: '¿Estás Seguro?',
+      text: 'Esta acción no se puede deshacer',
+      icon: 'question',
+      background: 'rgba(255, 241, 241, 1)',
+      color: 'rgba(80, 0, 0, 1)',
+      showCancelButton: true,
+      confirmButtonColor: '#B10303',
+      cancelButtonColor: '#500000',
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.menuServices.deleteMen(item.idDoc).then(() => {
+          Swal.fire({
+            icon: 'success',
+            title: 'Menú Eliminado Correctamente',
+            text: '¡Éxito!',
+            timer: 2000,
+            background: 'rgba(255, 241, 241, 1)',
+            color: 'rgba(80, 0, 0, 1)',
+            confirmButtonColor: 'rgba(177, 3, 3, 1)',
+          });
+        }).catch(error => {
+          console.log(error);
+          Swal.fire('¡Error!', 'Hubo un Error al Eliminar el Menú', 'error');
+        });
+      }
+    });
+  }
 
   // Modal
   private modalService = inject(NgbModal);

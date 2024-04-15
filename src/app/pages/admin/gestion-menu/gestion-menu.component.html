@@ -38,7 +38,7 @@
     <!-- Registrar Modal -->
     <ng-template #content let-modal>
         <div class="modal-header">
-            <h4 class="modal-title" id="modal-basic-title">Registrar/Actualizar Menus</h4>
+            <h4 class="modal-title" id="modal-basic-title">Registrar/Actualizar Menús</h4>
             <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
         </div>
         <div class="modal-body">
@@ -56,7 +56,7 @@
                         </div>
                         <div class="form-group">
                             <label>Cantidad</label>
-                            <input type="text" formControlName="cantidad" class="form-control">
+                            <input type="number" formControlName="cantidad" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Restaurante</label>
@@ -66,7 +66,7 @@
                         </div>
                         <div class="form-group">
                             <label>Precio</label>
-                            <input type="text" formControlName="precio" class="form-control">
+                            <input type="number" formControlName="precio" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Imagen</label>

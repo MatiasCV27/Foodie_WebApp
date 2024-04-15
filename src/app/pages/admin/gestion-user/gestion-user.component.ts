@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validator, Validators } from '@ang
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { UserService } from 'src/app/services/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-gestion-user',
@@ -73,8 +74,18 @@ export class GestionUserComponent implements OnInit{
     this.userService.createUsu(this.usuarioForm.value).then(respuesta => {
       this.usuarioForm.reset();
       this.modalService.dismissAll();
+      Swal.fire({
+        icon: 'success',
+        title: 'Usuario Guardado Correctamente',
+        text: '¡Éxito!',
+        timer: 2000,
+        background: 'rgba(255, 241, 241, 1)',
+        color: 'rgba(80, 0, 0, 1)',
+        confirmButtonColor: 'rgba(177, 3, 3, 1)',
+      });
     }).catch(error => {
       console.log(error)
+      Swal.fire('¡Error!', 'Hubo un Error al Guardar el Usuario', 'error');
     })
   }
 
@@ -83,14 +94,52 @@ export class GestionUserComponent implements OnInit{
       this.userService.updateUsu(this.idDocUpdate , this.usuarioForm.value).then(resp => {
         this.usuarioForm.reset();
         this.modalService.dismissAll();
+        Swal.fire({
+          icon: 'success',
+          title: 'Usuario Actualizado Correctamente',
+          text: '¡Éxito!',
+          timer: 2000,
+          background: 'rgba(255, 241, 241, 1)',
+          color: 'rgba(80, 0, 0, 1)',
+          confirmButtonColor: 'rgba(177, 3, 3, 1)',
+        });
       }).catch(error => {
         console.log(error)
+        Swal.fire('¡Error!', 'Hubo un Error al Actualizar el Usuario', 'error');
       })
     }
   }
 
   eliminarRest(item: any): void {
-    this.userService.deleteUsu(item.idDoc)
+    Swal.fire({
+      title: '¿Estás Seguro?',
+      text: 'Esta acción no se puede deshacer',
+      icon: 'question',
+      background: 'rgba(255, 241, 241, 1)',
+      color: 'rgba(80, 0, 0, 1)',
+      showCancelButton: true,
+      confirmButtonColor: '#B10303',
+      cancelButtonColor: '#500000',
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.userService.deleteUsu(item.idDoc).then(() => {
+          Swal.fire({
+            icon: 'success',
+            title: 'Usuario Eliminado Correctamente',
+            text: '¡Éxito!',
+            timer: 2000,
+            background: 'rgba(255, 241, 241, 1)',
+            color: 'rgba(80, 0, 0, 1)',
+            confirmButtonColor: 'rgba(177, 3, 3, 1)',
+          });
+        }).catch(error => {
+          console.log(error);
+          Swal.fire('¡Error!', 'Hubo un Error al Eliminar el Usuario', 'error');
+        });
+      }
+    });
   }  
 
   // Modal
