@@ -36,7 +36,6 @@ function ready() {
 }
 //Eliminamos todos los elementos del carrito y lo ocultamos
 function pagarClicked() {
-    console.log(actualizarTotalCarrito());
     ocultarCarrito();
 }
 //Funciòn que controla el boton clickeado de agregar al carrito

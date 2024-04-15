@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CarritoService } from 'src/app/services/carrito.service';
 import { MenuService } from 'src/app/services/menu.service';
 import { ICreateOrderRequest, IPayPalConfig } from 'ngx-paypal';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-menu-rest',
@@ -102,5 +103,17 @@ export class MenuRestComponent implements OnInit{
             console.log('OnCancel', data, actions);
         },
     };
+  }
+
+  pagar() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Compra exitosa!',
+      text: '¡Bienvenido de vuelta!',
+      timer: 2000,
+      background: 'rgba(255, 241, 241, 1)',
+      color: 'rgba(80, 0, 0, 1)',
+      confirmButtonColor: 'rgba(177, 3, 3, 1)',
+    });
   }
 }

@@ -18,7 +18,7 @@ export class UserHistorialComponent implements OnInit {
 
   // Con Correo de Muestra
   ngOnInit(): void {
-    const correoAFiltrar = this.dataService.getCorreo();
+    const correoAFiltrar = "mark@gmail.com";
 
     this.restServices.getVent().subscribe(
       (respuesta: any[]) => {
