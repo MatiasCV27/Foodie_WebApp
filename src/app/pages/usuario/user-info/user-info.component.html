@@ -8,27 +8,64 @@
         </div>
         <div class="user-info">
             <h3 class="info-title">Información General</h3>
-            <div class="info-content">
+            <div class="info-content" *ngFor="let usuario of usuarios">
                 <div class="info-left">
                     <h4>Nombre:</h4>
-                    <input type="text" class="form-control" placeholder="Nombre">
+                    <input type="text" class="form-control" placeholder="Nombre" [value]="usuario.nombre" readonly>
                     <h4>Correo Electrónico:</h4>
-                    <input type="email" class="form-control" placeholder="Correo Electrónico">
+                    <input type="email" class="form-control" placeholder="Correo Electrónico" [value]="usuario.email" readonly >
                     <h4>Teléfono:</h4>
-                    <input type="tel" class="form-control" placeholder="Teléfono">
+                    <input type="tel" class="form-control" placeholder="Teléfono"[value]="usuario.telefono" readonly>
     
                 </div>
                 <div class="info-right">
-                    <h4>Dirección:</h4>
-                    <input type="text" class="form-control" placeholder="Dirección">
+                    <h4>Nacimiento:</h4>
+                    <input type="text" class="form-control" placeholder="Fecha de Nacimiento" [value]="usuario.nacimiento" readonly>
                     <h4>Ciudad:</h4>
-                    <input type="text" class="form-control" placeholder="Ciudad">
+                    <input type="text" class="form-control" placeholder="Ciudad" [value]="usuario.ubicacion" readonly>
                     <div class="botones-container">
-                        <button class="btn btn-editar">Editar</button>
-                        <button class="btn btn-guardar">Guardar</button>
+                        <button class="btn btn-editar" (click)="openEdit(content, usuario)">Editar</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Registrar Modal -->
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Editar Perfil</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="mb-3">
+
+                <form [formGroup]="usuarioForm">
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input type="text" formControlName="nombre" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono</label>
+                        <input type="text" formControlName="telefono" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Ubicación</label>
+                        <input type="text" formControlName="ubicacion" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Nacimiento</label>
+                        <input type="text" formControlName="nacimiento" class="form-control">
+                    </div>
+                </form>
+
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="actualizarUsuario()" *ngIf="btnActualizar">Actualizar</button>
+    </div>
+</ng-template>
+  
