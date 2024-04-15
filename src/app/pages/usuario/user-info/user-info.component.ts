@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-user-info',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-info.component.css']
 })
 export class UserInfoComponent {
+
+  constructor(dataService: DataService) {
+    
+  }
 
 }
